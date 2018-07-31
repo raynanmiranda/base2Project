@@ -3,23 +3,25 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
-import pages.loginPage;
+import pages.LoginPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
-public class LoginStep extends loginPage {
+public class LoginStep extends LoginPage {
 	
-	loginPage loginPage = null;
+	// Constructor Method
+	LoginPage loginPage = null;
 	protected String mgsLoginInvalid = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.";
 	public LoginStep() {
-		loginPage = new loginPage();
+		loginPage = new LoginPage();
 	}
 
 			//********* LOGIN SUCESS ***********
 	
+	// Methods have link with cucumber to execute the scenarios
 	@Given("^I want to Login on the \"([^\"]*)\"$")
 	public void i_want_to_Login_on_the(String page){
 	    loginPage.openPage(page);
@@ -48,7 +50,7 @@ public class LoginStep extends loginPage {
 	    
 	}
 	
-	// ************ END SCENARIO ****************
+	
 	
 	// ****** INVALID USER LOGIN AND PASSWORD ******
 	
@@ -69,5 +71,5 @@ public class LoginStep extends loginPage {
 	    	
 	}
 	    
-	// ************ END SCENARIO ****************
+	
 }

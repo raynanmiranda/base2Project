@@ -6,8 +6,9 @@ import org.openqa.selenium.support.How;
 
 import base.PageBase;
 
-public class accountPage extends PageBase{
+public class AccountPage extends PageBase{
 
+	//*** The elements Map *************
 	@FindBy(how = How.ID,using="username")
 	public WebElement userNameField;
 	
@@ -20,6 +21,6 @@ public class accountPage extends PageBase{
 	@FindBy(how = How.XPATH, using = "//*[@value='Criar Conta']")
 	public WebElement btnCreateAccount;
 	
-	
+	//**********************************
 }
 

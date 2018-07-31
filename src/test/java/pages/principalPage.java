@@ -5,13 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import base.PageBase;
 
-public class principalPage extends PageBase {
+public class PrincipalPage extends PageBase {
 
 	private String userName = "raynan.miranda";
 	protected static String NewPass = "29092017"; 
 	
 	
-	
+	//****** The Elements Map ******
 	@FindBy(how = How.ID, using = "username")
 	public WebElement userField;
 	
@@ -90,6 +90,8 @@ public class principalPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/api_tokens_page.php']")
 	public WebElement tokenApiTag; //	Tokens API
 	
+	
+	// Methods used to access elements and do actions
 	public void openPage(String page) {
 		navegateTo(page); 
 	}

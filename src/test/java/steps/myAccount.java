@@ -2,23 +2,25 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
-import pages.principalPage;
+import pages.PrincipalPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class myAccount extends principalPage{
+public class MyAccount extends PrincipalPage{
 
-	principalPage principalPage = null;
-	public myAccount(){
-		principalPage = new principalPage();
+	// Constructor method
+	PrincipalPage principalPage = null;
+	public MyAccount(){
+		principalPage = new PrincipalPage();
 	}
 	
 		 
 	 
-	//protected String password = "29092017";
+
 	
+	// Methods have link with cucumber to execute the scenarios
 	@Given("^I'm already logged in$")
 	public void i_m_already_logged_in() throws Throwable {
 	    principalPage.openPage("http://mantis.base2.com.br/login_page.php");

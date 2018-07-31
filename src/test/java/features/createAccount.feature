@@ -1,7 +1,7 @@
 Feature: CreateAccount
 
 Background:
-Given I already have access Login Page "http://mantis.base2.com.br/login_page.php"
+Given I already have access Login Page "http://mantis.raynan.base2.com.br/login_page.php"
 
 Scenario: Access the account link
 

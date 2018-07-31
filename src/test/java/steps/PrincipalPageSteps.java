@@ -3,19 +3,19 @@ package steps;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import pages.principalPage;
+import pages.PrincipalPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class PrincipalPageSteps extends principalPage {
+public class PrincipalPageSteps extends PrincipalPage {
 
-	principalPage principalPage = null;
+	PrincipalPage principalPage = null;
 	
 	
 	public PrincipalPageSteps() {
-		principalPage = new principalPage();
+		principalPage = new PrincipalPage();
 	}
 	
 	// ******** Access Principal Page of Mantis - Account **************

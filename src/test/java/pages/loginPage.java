@@ -7,8 +7,9 @@ import base.PageBase;
 
 import org.openqa.selenium.WebElement;
 
-public class loginPage extends PageBase {
+public class LoginPage extends PageBase {
 
+	//****** The Elements Map ******
 	@FindBy(how = How.ID, using = "username")
 	public WebElement userField;
 	
@@ -45,6 +46,10 @@ public class loginPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']/div/div[2]/p[1]")
 	public WebElement validateMgsError;
 	
+	//**************************
+	
+	
+	// Methods used to access the elements and do actions
 	public void openPage(String page) {
 		navegateTo(page); 
 	}
@@ -77,4 +82,6 @@ public class loginPage extends PageBase {
 	public void btnSendNewPassword() {
 		btnSendNewPassword.click();
 	}
+	
+	
 }

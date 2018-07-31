@@ -2,16 +2,17 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
-import pages.loginPage;
+import pages.LoginPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class CreateAccountSteps extends loginPage {
+public class CreateAccountSteps extends LoginPage {
 
-	loginPage loginPage = null;
+	// Constructor method
+	LoginPage loginPage = null;
 	public CreateAccountSteps() {
-	loginPage = new loginPage();
+	loginPage = new LoginPage();
 	}
 	
 	@Given("^I already have access Login Page \"([^\"]*)\"$")

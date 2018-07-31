@@ -1,11 +1,12 @@
 Feature: My Account 
 
+#Steps in common to use with all scenarios
 Background:
 	
 	Given I'm already logged in
 	When Access the menuAccount
 	And click on MyAccount
-	#Then will access my account Page
+	
 
 Scenario: fill in the form on the myAccount with new Password
 	
@@ -36,21 +37,26 @@ Scenario: Change the name and E-mail Again on MyAccount form
 	And click on 'Atualizar Usuario'
 	Then will save with sucess
 
+# Use to specificate the scenario to run
+@PreferencesTag
 Scenario: Access the Preferences Tag
 
 	When Click on the 'Preferências' tag
 	Then Will access the preferences itens
 
+@ColunsTag
 Scenario: Access the Manage coluns Tag
 
 	When Click on the 'Gerenciar colunas' tag
 	Then Will access the manageColuns itens
 
+@PerfilsTag
 Scenario: Access the Perfils Tag
 
 	When Click on the 'Perfils' tag
 	Then Will access the perfils itens
-	
+
+@TokenAPITag	
 Scenario: Access the TokenAPI Tag
 
 	When Click on the 'TokenAPI' tag

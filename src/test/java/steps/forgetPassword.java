@@ -2,22 +2,24 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
-import pages.loginPage;
+import pages.LoginPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class forgetPassword extends loginPage {
+public class ForgetPassword extends LoginPage {
 	
-	loginPage loginPg = null;
-	public forgetPassword() {
-	loginPg = new loginPage();
+	// Constructor method
+	LoginPage loginPg = null;
+	public ForgetPassword() {
+	loginPg = new LoginPage();
 	}
 	protected String validForgetPasswordPage = "Reajuste de Senha";
 	protected String validLoginPage = "Entrar";
 	protected String validMgsErro = "APPLICATION ERROR #1903";
 	
+	// Methods have link with cucumber to execute the scenarios
 	@Given("^I already have access to the Login Page \"([^\"]*)\"$")
 	public void I_already_have_access_to_the_Login_Page(String page) throws Throwable {
 	    loginPg.openPage(page);

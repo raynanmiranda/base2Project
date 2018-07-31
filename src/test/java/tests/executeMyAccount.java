@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = {"src/test/java/features/MyAccount.feature"}, 
 				     glue = {"steps","hoks"}
-				     
+				     //tags = {"@PreferencesTag"}
 				)
 public class executeMyAccount {
 
