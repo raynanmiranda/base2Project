@@ -90,6 +90,10 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/api_tokens_page.php']")
 	public WebElement tokenApiTag; //	Tokens API
 	
+	@FindBy(how = How.CLASS_NAME, using = "btn btn-primary btn-sm")
+	public WebElement btnConvidarUsuarios;
+	
+	
 	
 	// Methods used to access elements and do actions
 	public void openPage(String page) {
@@ -174,6 +178,11 @@ public class PrincipalPage extends PageBase {
 	public void tokenApiTag() {
 		tokenApiTag.click();
 	}
+	
+	public void btnConvidarUsuarios() {
+		btnConvidarUsuarios.click();
+	}
+	
 	
 }
 
