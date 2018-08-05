@@ -7,7 +7,7 @@ import base.PageBase;
 
 public class PrincipalPage extends PageBase {
 
-	private String userName = "raynan.miranda";
+	private String userName = "administrator";
 	protected static String NewPass = "29092017"; 
 	
 	
@@ -90,7 +90,7 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/api_tokens_page.php']")
 	public WebElement tokenApiTag; //	Tokens API
 	
-	@FindBy(how = How.CLASS_NAME, using = "btn btn-primary btn-sm")
+	@FindBy(how = How.XPATH, using = "//*[@id='navbar-container']//*[@href='manage_user_create_page.php']")
 	public WebElement btnConvidarUsuarios;
 	
 	
