@@ -71,4 +71,30 @@ public class ProjectsSteps extends ManagePage{
 		assertEquals(checkName, managePage.nameProject);
 	}
 	
+	@Given("^click on the 'Gerenciar usuários' tab$")
+	public void click_on_the_Gerenciar_usuários_tab() throws Throwable {
+	    managePage.manageUsersTag();
+	}
+
+	
+	@And("^Click on the 'Criar Nova Conta' button$")
+	public void click_on_the_Criar_Nova_Conta_button() throws Throwable {
+		managePage.btnCreateNewAccount();
+	}
+	
+	@When("^I fill up the valid user data form$")
+	public void i_fill_up_the_valid_user_data_form() throws Throwable {
+		managePage.set_DataFileUser();
+	}
+	
+	@And("^Click on the 'Criar Usuário' button$")
+	public void click_on_the_criar_usuario_button() throws Throwable {
+		managePage.btnCreateNewUser();
+	}
+	
+	@Then("^Will create the user$")
+	public void will_create_the_user() throws Throwable {
+		
+	}
+	
 }

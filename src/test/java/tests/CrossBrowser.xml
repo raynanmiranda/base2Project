@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <suite name="SuiteBrowser" parallel="false">
+  <test name="FireFoxTest">
+  	<parameter name="browser" value="FireFox"/>
+  	<classes>
+  	 <class name="src/test/java/hoks/HokSteps"></class>
+  	 
+  	</classes>
+  </test>
+  <test name="ChromeTest">
+  	<parameter name="browser" value="chrome"/>
+  	<classes>
+  	 <class name="src/test/java/hoks/HokSteps"></class>
+  	 
+  	</classes>
+  </test>
+ </suite>

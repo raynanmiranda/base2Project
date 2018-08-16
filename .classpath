@@ -41,5 +41,8 @@
 	<classpathentry kind="lib" path="E:/JARs/Selenium/libs/guava-23.0.jar"/>
 	<classpathentry kind="lib" path="E:/JARs/Selenium/libs/httpclient-4.5.3.jar"/>
 	<classpathentry kind="lib" path="E:/JARs/Selenium/libs/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="E:/JARs/maven-surefire-report-plugin-2.22.0.jar"/>
+	<classpathentry kind="lib" path="E:/JARs/cucumber-jvm-parallel-plugin-4.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/JARs/testng-6.8.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

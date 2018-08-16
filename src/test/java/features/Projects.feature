@@ -20,3 +20,13 @@ And Click on the 'Criar Novo Projeto' button
 When I fill up the valid data form
 And Click on the 'Adicionar projeto' button
 Then Will create the Project
+
+@CreateNewUserOnManageUsers
+Scenario: Create a New user account
+
+And I click on the 'Convidar Usuários' button
+And click on the 'Gerenciar usuários' tab
+And Click on the 'Criar Nova Conta' button
+When I fill up the valid user data form
+And Click on the 'Criar Usuário' button
+Then Will create the user
