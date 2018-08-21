@@ -1,30 +1,17 @@
 package pages;
 
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 
 import base.PageBase;
-import utils.Constant;
-
-
 
 public class ManagePage extends PageBase{
 
-	
-	
-	public String nameProject;
+public String nameProject;
 	
 	@FindBy(how = How.CSS, using = "button[class*='btn-white']")
 	public WebElement btnCriarNovoProjeto;
@@ -63,13 +50,13 @@ public class ManagePage extends PageBase{
 	public WebElement accesslevel; //	UserName of create new Account(Manager Users)
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_user_page.php']")
-	public WebElement manageUsersTag; //	Gerenciar Usuários
+	public WebElement manageUsersTag; //	Gerenciar Usuarios
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='manage-user-div']//*[text()='Criar nova conta']")
 	public WebElement btnCreateNewAccount; //Criar nova conta
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Criar Usuário']")
-	public WebElement btnCreateNewUser; //Criar Usuário 
+	@FindBy(how = How.XPATH, using = "//*[@value='Criar Usuario']")
+	public WebElement btnCreateNewUser; //Criar Usuario 
 	
 	public void btnCriarNovoProjeto() {
 		btnCriarNovoProjeto.click();
@@ -130,21 +117,7 @@ public class ManagePage extends PageBase{
 	
 	public void set_DataFileUser() throws Exception {
 		
-		PageBase.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"TestData.xlsx");
-		String sUserName = PageBase.getCellData(1, 0);
-		System.out.println("User:"+ sUserName);
-		String sRealName = PageBase.getCellData(1, 1);
-		System.out.println("RealName:"+ sRealName);
-		String sEmail = PageBase.getCellData(1, 2);
-		System.out.println("E-mail:"+ sEmail);
-		user_Name.clear();
-		user_Name.sendKeys(sUserName);
 		
-		real_Name.clear();
-		real_Name.sendKeys(sRealName);
-		
-		email.clear();
-		email.sendKeys(sEmail);
 		
 	}
 	
@@ -152,5 +125,6 @@ public class ManagePage extends PageBase{
 	public void btnCreateNewUser() {
 		btnCreateNewUser.click();
 	}
+
 	
 }

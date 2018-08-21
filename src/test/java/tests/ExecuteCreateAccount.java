@@ -7,11 +7,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-				 features = "src/test/java/features/createAccount.feature", 
-				     glue = {"steps","hoks"}
+				 features = "src/test/java/features/CreateAccount.feature", 
+				     glue = {"steps","hook"}
 				     
 				)
 
-public class executeAccessCreateAccount {
+public class ExecuteCreateAccount {
 
 }

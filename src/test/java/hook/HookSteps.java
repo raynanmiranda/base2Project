@@ -1,15 +1,11 @@
-package hoks;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+package hook;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import utils.DriverFactory;
 
-public class HokSteps {
-	//DriverFactory driver = new DriverFactory();
-	
+public class HookSteps {
+
 	@Before
 	public void setUp() {
 		
@@ -23,4 +19,6 @@ public class HokSteps {
 		Thread.sleep(1000);
 		DriverFactory.quitDriver();
 	}
+
+	
 }

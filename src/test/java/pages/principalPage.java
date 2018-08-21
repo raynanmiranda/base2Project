@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
 import base.PageBase;
 
 public class PrincipalPage extends PageBase {
@@ -72,20 +73,20 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.ID, using = "realname")
 	public WebElement realName;
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Usuário']")
+	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar UsuÃ¡rio']")
 	public WebElement btnUpdateUser;
 
 	@FindBy(how = How.XPATH, using = "//*[@class='active']/a")
 	public WebElement validateMenusMyAccount;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_prefs_page.php']")
-	public WebElement preferencesTag; //	Preferências
+	public WebElement preferencesTag; //	PreferÃªncias
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_manage_columns_page.php']")
 	public WebElement manageColunsTag; //	Gerenciar Colunas
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_prof_menu_page.php']")
-	public WebElement perfilTag; //	Perfís
+	public WebElement perfilTag; //	PerfÃ­s
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/api_tokens_page.php']")
 	public WebElement tokenApiTag; //	Tokens API
@@ -182,7 +183,5 @@ public class PrincipalPage extends PageBase {
 	public void btnConvidarUsuarios() {
 		btnConvidarUsuarios.click();
 	}
-	
-	
-}
 
+}

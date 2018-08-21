@@ -7,11 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-				 features = "src/test/java/features/forgetPassword.feature", 
-				     glue = {"steps","hoks"}
+				 features = "src/test/java/features/ForgetPassword.feature", 
+				     glue = {"steps","hook"}
 				     
 				)
 
-public class executeForgetPassword {
+
+public class ExecuteForgetPassword {
 
 }

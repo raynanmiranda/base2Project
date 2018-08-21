@@ -1,8 +1,6 @@
 package steps;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -11,12 +9,12 @@ import cucumber.api.java.en.When;
 import pages.ManagePage;
 import pages.PrincipalPage;
 
-public class ProjectsSteps extends ManagePage{
+public class ProjectSteps extends ManagePage {
 
 	ManagePage managePage = null;
 	PrincipalPage principalPage = null;
 	
-	public ProjectsSteps() {
+	public ProjectSteps() {
 		managePage = new ManagePage();
 		principalPage = new PrincipalPage();
 	}
@@ -30,8 +28,8 @@ public class ProjectsSteps extends ManagePage{
 		    principalPage.dataLogin();
 		}*/
 		
-	@When("^I click on the 'Convidar Usuários' button$")
-	public void i_click_on_the_Convidar_Usuários_button() {
+	@When("^I click on the 'Convidar Usuarios' button$")
+	public void i_click_on_the_Convidar_Usuarios_button() {
 		principalPage.btnConvidarUsuarios();
 	}
 
@@ -71,8 +69,8 @@ public class ProjectsSteps extends ManagePage{
 		assertEquals(checkName, managePage.nameProject);
 	}
 	
-	@Given("^click on the 'Gerenciar usuários' tab$")
-	public void click_on_the_Gerenciar_usuários_tab() throws Throwable {
+	@Given("^click on the 'Gerenciar usuarios' tab$")
+	public void click_on_the_Gerenciar_usuarios_tab() throws Throwable {
 	    managePage.manageUsersTag();
 	}
 
@@ -84,17 +82,18 @@ public class ProjectsSteps extends ManagePage{
 	
 	@When("^I fill up the valid user data form$")
 	public void i_fill_up_the_valid_user_data_form() throws Throwable {
-		managePage.set_DataFileUser();
+		//managePage.set_DataFileUser();
 	}
 	
-	@And("^Click on the 'Criar Usuário' button$")
+	@And("^Click on the 'Criar Usuario' button$")
 	public void click_on_the_criar_usuario_button() throws Throwable {
-		managePage.btnCreateNewUser();
+		//managePage.btnCreateNewUser();
 	}
 	
 	@Then("^Will create the user$")
 	public void will_create_the_user() throws Throwable {
 		
 	}
+
 	
 }

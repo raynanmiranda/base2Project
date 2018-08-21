@@ -41,7 +41,7 @@ Scenario: Change the name and E-mail Again on MyAccount form
 @PreferencesTag
 Scenario: Access the Preferences Tag
 
-	When Click on the 'Preferências' tag
+	When Click on the 'Preferencias' tag
 	Then Will access the preferences itens
 
 @ColunsTag
