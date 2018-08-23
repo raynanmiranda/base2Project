@@ -82,12 +82,15 @@ public class ProjectSteps extends ManagePage {
 	
 	@When("^I fill up the valid user data form$")
 	public void i_fill_up_the_valid_user_data_form() throws Throwable {
-		//managePage.set_DataFileUser();
+		managePage.set_DataFileUser(1,0);
+		managePage.set_DataFileRealName(1,1);
+		managePage.set_DataFileEmail(1,2);
+		
 	}
 	
 	@And("^Click on the 'Criar Usuario' button$")
 	public void click_on_the_criar_usuario_button() throws Throwable {
-		//managePage.btnCreateNewUser();
+		managePage.btnCreateNewUser();
 	}
 	
 	@Then("^Will create the user$")

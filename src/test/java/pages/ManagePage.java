@@ -7,10 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import base.DataTestExcel;
 import base.PageBase;
 
 public class ManagePage extends PageBase{
 
+	DataTestExcel dtExcel = new DataTestExcel();
+	
 public String nameProject;
 	
 	@FindBy(how = How.CSS, using = "button[class*='btn-white']")
@@ -115,15 +118,29 @@ public String nameProject;
 		btnCreateNewAccount.click();
 	}
 	
-	public void set_DataFileUser() throws Exception {
+	public void set_DataFileUser(int getRow, int getCell) throws Exception {
+		
+		dtExcel.readDataExcel(getRow, getCell);
+		user_Name.sendKeys(dtExcel.cellValue);
 		
 		
+	}
+	public void set_DataFileRealName(int getRow, int getCell) throws Exception {
 		
+		dtExcel.readDataExcel(getRow, getCell);
+		real_Name.sendKeys(dtExcel.cellValue);
+				
+	}
+	public void set_DataFileEmail(int getRow, int getCell) throws Exception {
+		
+		dtExcel.readDataExcel(getRow, getCell);
+		email.sendKeys(dtExcel.cellValue);
+				
 	}
 	
 	
 	public void btnCreateNewUser() {
-		btnCreateNewUser.click();
+		//btnCreateNewUser.click();
 	}
 
 	
