@@ -13,6 +13,6 @@ import cucumber.api.junit.Cucumber;
 				)
 
 
-public class ExecutePrincipalPage {
+public class ExecutePrincipalPageTest {
 
 }

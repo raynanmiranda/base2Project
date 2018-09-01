@@ -14,6 +14,6 @@ import cucumber.api.junit.Cucumber;
 				     
 				)
 
-public class ExecuteProjects {
+public class ExecuteProjectsTest {
 
 }

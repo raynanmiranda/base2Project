@@ -73,7 +73,7 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.ID, using = "realname")
 	public WebElement realName;
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar UsuÃ¡rio']")
+	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Usuario']")
 	public WebElement btnUpdateUser;
 
 	@FindBy(how = How.XPATH, using = "//*[@class='active']/a")

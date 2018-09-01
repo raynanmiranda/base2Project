@@ -13,6 +13,6 @@ import cucumber.api.junit.Cucumber;
 				)
 
 
-public class ExecuteMyAccount {
+public class ExecuteMyAccountTest {
 
 }

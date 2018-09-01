@@ -12,6 +12,6 @@ import cucumber.api.junit.Cucumber;
 				     
 				)
 
-public class ExecuteCreateAccount {
+public class ExecuteCreateAccountTest {
 
 }
