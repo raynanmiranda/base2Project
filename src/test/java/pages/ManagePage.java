@@ -53,13 +53,26 @@ public String nameProject;
 	public WebElement accesslevel; //	UserName of create new Account(Manager Users)
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_user_page.php']")
-	public WebElement manageUsersTag; //	Gerenciar Usuarios
+	public WebElement manageUsersTag; //	Gerenciar Usuários
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='manage-user-div']//*[text()='Criar nova conta']")
 	public WebElement btnCreateNewAccount; //Criar nova conta
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Criar Usuario']")
-	public WebElement btnCreateNewUser; //Criar Usuario 
+	@FindBy(how = How.XPATH, using = "//*[@id='manage-user-create-form']//*[@type='submit']")
+	public WebElement btnCreateNewUser; //Criar Usuario
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"main-container\"]//*[@class='alert alert-danger']/p[2]")
+	public WebElement validateMgsEmailError;
+	
+	@FindBy(how = How.LINK_TEXT, using = "test1")//"//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
+	public WebElement validateUserCreated;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-success center']//*[@href='manage_user_page.php']")
+	public WebElement btnSucessGeneral;
+	
+	public void btnSucessGeneral() {
+		btnSucessGeneral.click();
+	}
 	
 	public void btnCriarNovoProjeto() {
 		btnCriarNovoProjeto.click();
@@ -118,30 +131,35 @@ public String nameProject;
 		btnCreateNewAccount.click();
 	}
 	
-	public void set_DataFileUser(int getRow, int getCell) throws Exception {
+public void fillUserName(String userName){
 		
-		dtExcel.readDataExcel(getRow, getCell);
-		user_Name.sendKeys(dtExcel.cellValue);
-		
-		
-	}
-	public void set_DataFileRealName(int getRow, int getCell) throws Exception {
-		
-		dtExcel.readDataExcel(getRow, getCell);
-		real_Name.sendKeys(dtExcel.cellValue);
+		user_Name.clear();
+		user_Name.sendKeys(userName);
 				
 	}
-	public void set_DataFileEmail(int getRow, int getCell) throws Exception {
-		
-		dtExcel.readDataExcel(getRow, getCell);
-		email.sendKeys(dtExcel.cellValue);
-				
-	}
+
+public void fillRealName(String realName){
+	
+	real_Name.clear();
+	real_Name.sendKeys(realName);
+			
+}
+
+public void fillEmail(String emailForm){
+	
+	email.clear();
+	email.sendKeys(emailForm);
+			
+}
+	
 	
 	
 	public void btnCreateNewUser() {
-		//btnCreateNewUser.click();
+		btnCreateNewUser.click();
 	}
 
+	public void validateUserCreated() {
+		validateUserCreated.getText();
+	}
 	
 }

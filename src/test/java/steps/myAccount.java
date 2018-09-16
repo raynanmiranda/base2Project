@@ -69,14 +69,14 @@ public class MyAccount extends PrincipalPage{
 		    
 		}
 
-		@When("^Click on the 'Preferências' tag$")
+		@When("^Click on the 'Preferencias' tag$")
 		public void click_on_the_Preferencias_tag() throws Throwable {
 		    principalPage.preferencesTag();
 		}
 
 		@Then("^Will access the preferences itens$")
 		public void will_access_the_preferences_itens() throws Throwable {
-		    assertEquals("Preferências", principalPage.validateMenusMyAccount.getText());
+		    assertEquals("Preferências", principalPage.validatePreferenceMenuMyAccount.getText());
 		}
 
 		@When("^Click on the 'Gerenciar colunas' tag$")
@@ -86,7 +86,7 @@ public class MyAccount extends PrincipalPage{
 
 		@Then("^Will access the manageColuns itens$")
 		public void will_access_the_manageColuns_itens() throws Throwable {
-			assertEquals("Gerenciar Colunas", principalPage.validateMenusMyAccount.getText());
+			assertEquals("Gerenciar Colunas", principalPage.validateManageColunsMenuMyAccount.getText());
 		}
 
 		@When("^Click on the 'Perfils' tag$")
@@ -96,7 +96,7 @@ public class MyAccount extends PrincipalPage{
 
 		@Then("^Will access the perfils itens$")
 		public void will_access_the_perfils_itens() throws Throwable {
-			assertEquals("PerfÃ­s", principalPage.validateMenusMyAccount.getText());
+			assertEquals("Perfís", principalPage.validatePerfisMenuMyAccount.getText());
 		}
 
 		@When("^Click on the 'TokenAPI' tag$")
@@ -106,7 +106,7 @@ public class MyAccount extends PrincipalPage{
 
 		@Then("^Will access the TokenAPI itens$")
 		public void will_access_the_TokenAPI_itens() throws Throwable {
-			assertEquals("Tokens API", principalPage.validateMenusMyAccount.getText());
+			assertEquals("Tokens API", principalPage.validateTokenApiMenuMyAccount.getText());
 		}
 
 }

@@ -28,12 +28,14 @@ public class DriverFactory {
 					optionChrome.setCapability("intl.accept_languages", "pt-br");
 					optionChrome.setCapability("dom.popup_maximum", 0);
 					INSTANCE = new RemoteWebDriver(new URL(Configuration.REMOTE_URL), optionChrome);
+					INSTANCE.manage().window().maximize();
 					break;
 				case "firefox":
 					FirefoxOptions optionFireFox = new FirefoxOptions();
 					optionFireFox.addPreference("intl.accept_languages", "pt-br");
 					optionFireFox.addPreference("dom.popup_maximum", 0);
 					INSTANCE = new RemoteWebDriver(new URL(Configuration.REMOTE_URL), optionFireFox);
+					INSTANCE.manage().window().maximize();
 					break;
 					
 				default:
@@ -42,23 +44,23 @@ public class DriverFactory {
 
 				}	
 			}
-//			else {
-//			
-//			switch (browser.toLowerCase()) {
-//			case "chrome":
-//				System.setProperty("webdriver.chrome.driver", Configuration.PATH_CHROME);
-//				INSTANCE = new ChromeDriver();
-//				INSTANCE.manage().window().maximize();
-//				break;
-//			case "firefox":
-//				//System.setProperty("webdriver.gecko.driver", "E:\\browserDrivers\\geckodriver.exe");
-//				INSTANCE = new FirefoxDriver();
-//				INSTANCE.manage().window().maximize();
-//				break;
-//			default:
-//				throw new java.lang.Error("Browser informado não é suportado");
-//			}
-//		   }
+			else {
+			
+			switch (browser.toLowerCase()) {
+			case "chrome":
+				System.setProperty("webdriver.chrome.driver", Configuration.PATH_CHROME);
+				INSTANCE = new ChromeDriver();
+				INSTANCE.manage().window().maximize();
+				break;
+			case "firefox":
+				//System.setProperty("webdriver.gecko.driver", "E:\\browserDrivers\\geckodriver.exe");
+				INSTANCE = new FirefoxDriver();
+				INSTANCE.manage().window().maximize();
+				break;
+			default:
+				throw new java.lang.Error("Browser informado não é suportado");
+			}
+		   }
 			
 		 }
 		}

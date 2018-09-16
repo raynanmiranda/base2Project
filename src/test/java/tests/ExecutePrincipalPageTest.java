@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = {"src/test/java/features/PrincipalMantisPage.feature"}, 
 				     glue = {"steps","hook"}
-				     
+				     //tags = {"@test"}
 				)
 
 

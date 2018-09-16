@@ -20,7 +20,8 @@ public class ProjectSteps extends ManagePage {
 	}
 	
 	private String checkName = "testNewProject";
-		
+	public String checkUser;
+	
 	// Methods have link with cucumber to execute the scenarios
 	/*@Given("^I'm already logged in$")
 		public void i_m_already_logged_in() throws Throwable {
@@ -80,21 +81,55 @@ public class ProjectSteps extends ManagePage {
 		managePage.btnCreateNewAccount();
 	}
 	
-	@When("^I fill up the valid user data form$")
-	public void i_fill_up_the_valid_user_data_form() throws Throwable {
-		managePage.set_DataFileUser(1,0);
-		managePage.set_DataFileRealName(1,1);
-		managePage.set_DataFileEmail(1,2);
-		
+	@When("^I fill up the userName (.*) on the form$")
+	public void i_fill_up_the_userName_on_the_form(String userName) {
+	    managePage.fillUserName(userName);
+	    checkUser = userName;
 	}
+	
+	@And("^I fill up the realName (.*) on the form$")
+	public void i_fill_up_the_realName_on_the_form(String realName) {
+	    managePage.fillRealName(realName);
+	    
+	}
+	@And("^I fill up the email (.*) on the form$")
+	public void i_fill_up_the_email_on_the_form(String email) {
+	    managePage.fillEmail(email);
+	    
+	}
+	
 	
 	@And("^Click on the 'Criar Usuario' button$")
 	public void click_on_the_criar_usuario_button() throws Throwable {
 		managePage.btnCreateNewUser();
+		Thread.sleep(5000);
 	}
 	
-	@Then("^Will create the user$")
-	public void will_create_the_user() throws Throwable {
+	@Then("^Will validate the user$")
+	public void will_validate_the_user(){
+		
+		
+			if(checkUser.equals("test1")) {
+			
+				managePage.manageUsersTag();
+				assertEquals("test1", managePage.validateUserCreated.getText());
+				System.out.println("Validated E-mail valid. True");
+				
+				}
+			else if (checkUser.equals("test5")) {
+				assertEquals("Este e-mail já está sendo usado. Por favor, volte e selecione outro.", managePage.validateMgsEmailError.getText());
+				System.out.println("Validated E-mail already exist. True");
+					}
+			
+			else if (checkUser.equals("test2") || checkUser.equals("test3") ||checkUser.equals("test4")) {
+				
+				assertEquals("E-mail inválido.", managePage.validateMgsEmailError.getText());
+				System.out.println("Validated E-mail Invalid. True");
+				
+				}
+			
+		
+		
 		
 	}
 

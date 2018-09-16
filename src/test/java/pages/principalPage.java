@@ -22,13 +22,13 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@value='Entrar']")
 	public WebElement btnLogin;
 	
-	@FindBy(how = How.XPATH, using="//*[@class='dropdown-toggle']")
+	@FindBy(how = How.XPATH, using="//*[@class='dropdown-toggle']//*[@class='user-info']")
 	public WebElement myAccountMenu;
 	
-	@FindBy(how = How.XPATH, using="//*[@class='user-menu dropdown-menu dropdown-menu-right dropdown-yellow dropdown-caret dropdown-close']//*[@href='/account_page.php']")
+	@FindBy(how = How.XPATH, using="//*[@id='navbar-container']//*[@href='/account_page.php']")
 	public WebElement myAccount; 
 	
-	@FindBy(how = How.XPATH, using="//*[@class='active']/a")
+	@FindBy(how = How.XPATH, using="//*[@class='page-content']//*[@href='/account_page.php']")
 	public WebElement validateMyAccount;
 	
 	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/view_all_bug_page.php']")
@@ -37,14 +37,17 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"bug_action\"]//*[@class='widget-title lighter']")
 	public WebElement validateSeeTask;
 	
-	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/bug_report_page.php']")
-	public WebElement menuCreateTask;
+	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/summary_page.php']")
+	public WebElement menuResumo;
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Criar Nova Tarefa']")
-	public WebElement validateCreateTask;
+	@FindBy(how = How.XPATH, using = "//*[@class='page-content']//*[@href='/summary_page.php']")
+	public WebElement validateResumoPage;
 	
-	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/bug_report_page.php']")
-	public WebElement btnCreateTask;
+	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/manage_overview_page.php']")
+	public WebElement menuGerenciar;
+	
+	@FindBy (how = How.XPATH, using="//*[@class='page-content']//*[@href='manage_overview_page.php']")
+	public WebElement validateMenuGerenciar;
 	
 	@FindBy (how = How.XPATH, using="//*[@class='btn btn-primary btn-sm']")
 	public WebElement menuRegisterChange;
@@ -73,20 +76,26 @@ public class PrincipalPage extends PageBase {
 	@FindBy(how = How.ID, using = "realname")
 	public WebElement realName;
 	
-	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Usuario']")
+	@FindBy(how = How.XPATH, using = "//*[@id='account-update-form']//*[@type='submit']")
 	public WebElement btnUpdateUser;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='active']/a")
-	public WebElement validateMenusMyAccount;
+	@FindBy(how = How.XPATH, using = "//*[@class='page-content']//*[@class='active']//*[@href='/account_prefs_page.php']")
+	public WebElement validatePreferenceMenuMyAccount;
+	@FindBy(how = How.XPATH, using = "//*[@class='page-content']//*[@class='active']//*[@href='/account_manage_columns_page.php']")
+	public WebElement validateManageColunsMenuMyAccount;
+	@FindBy(how = How.XPATH, using = "//*[@class='page-content']//*[@class='active']//*[@href='/account_prof_menu_page.php']")
+	public WebElement validatePerfisMenuMyAccount;
+	@FindBy(how = How.XPATH, using = "//*[@class='page-content']//*[@class='active']//*[@href='/api_tokens_page.php']")
+	public WebElement validateTokenApiMenuMyAccount;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_prefs_page.php']")
-	public WebElement preferencesTag; //	PreferÃªncias
+	public WebElement preferencesTag; //	Preferencias
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_manage_columns_page.php']")
 	public WebElement manageColunsTag; //	Gerenciar Colunas
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/account_prof_menu_page.php']")
-	public WebElement perfilTag; //	PerfÃ­s
+	public WebElement perfilTag; //	Perfis
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/api_tokens_page.php']")
 	public WebElement tokenApiTag; //	Tokens API
@@ -124,11 +133,11 @@ public class PrincipalPage extends PageBase {
 		menuSeeTask.click();
 	}
 	
-	public void menuCreateTask() {
-		menuCreateTask.click();
+	public void menuResumo() {
+		menuResumo.click();
 	}	
-	public void btnCreateTask() {
-		btnCreateTask.click();
+	public void menuGerenciar() {
+		menuGerenciar.click();
 	}
 	
 	public void menuRegisterChange() {

@@ -22,7 +22,7 @@ PrincipalPage principalPage = null;
 	
 	@Given("^I'm already logged$")
 	public void i_m_already_logged() {
-	   principalPage.openPage("http://mantis.base2.com.br/login_page.php");
+	   principalPage.openPage("http://mantis.raynan.base2.com.br/login_page.php");
 	   principalPage.dataLogin();
 	}
 
@@ -55,20 +55,25 @@ PrincipalPage principalPage = null;
 	   assertTrue(principalPage.validateSeeTask.isEnabled());
 	}
 
-	@When("^Click on Criar Tarefa$")
-	public void click_on_Criar_Tarefa() throws Throwable {
-	    principalPage.menuCreateTask();
+	@When("^Click on Resumo$")
+	public void click_on_resumo() throws Throwable {
+	    principalPage.menuResumo();
 	}
 
-	@Then("^Will access the Criar Tarefa page$")
-	public void will_access_the_Criar_Tarefa_page() throws Throwable {
-		assertTrue(principalPage.validateCreateTask.isDisplayed());
+	@Then("^Will access the Resumo page$")
+	public void will_access_the_Resumo_page() throws Throwable {
+		assertTrue(principalPage.validateResumoPage.isDisplayed());
 
 	}
 
-	@When("^Click on button Criar Tarefa$")
-	public void click_on_button_Criar_Tarefa() throws Throwable {
-	    principalPage.btnCreateTask();
+	@When("^Click on Gerenciar tab$")
+	public void click_on_Gerenciar_Tab() throws Throwable {
+	    principalPage.menuGerenciar();
+	}
+	
+	@Then("^Will access the Gerenciar page$")
+	public void will_access_the_Gerenciar_page() throws Throwable {
+	    assertTrue(principalPage.validateMenuGerenciar.isDisplayed());
 	}
 	
 	@When("^Click on Registro de mudancas$")

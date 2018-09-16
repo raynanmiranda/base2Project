@@ -18,7 +18,7 @@ public class LoginPage extends PageBase{
 		@FindBy(how = How.XPATH, using = "//*[@value='Entrar']")
 		public WebElement btnLogin;
 		
-		@FindBy(how = How.XPATH, using = "//*[@id='main-container']//p[contains(text(),'usuário e a senha')]")
+		@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-danger']")
 		public WebElement mgsLoginInvalid;
 		
 		@FindBy(how = How.XPATH, using = "//*[@id='login-form']/fieldset/a")
