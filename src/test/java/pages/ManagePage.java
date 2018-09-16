@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
-import base.DataTestExcel;
+
 import base.PageBase;
 
 public class ManagePage extends PageBase{
 
-	DataTestExcel dtExcel = new DataTestExcel();
+	
 	
 public String nameProject;
 	
@@ -64,7 +64,7 @@ public String nameProject;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"main-container\"]//*[@class='alert alert-danger']/p[2]")
 	public WebElement validateMgsEmailError;
 	
-	@FindBy(how = How.LINK_TEXT, using = "test1")//"//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
+	@FindBy(how = How.LINK_TEXT, using = "testUser")//"//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
 	public WebElement validateUserCreated;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-success center']//*[@href='manage_user_page.php']")

@@ -22,6 +22,10 @@ public class ProjectSteps extends ManagePage {
 	private String checkName = "testNewProject";
 	public String checkUser;
 	
+	private String fieldUserName = "testUser";
+	private String fieldRealName = "testRealUser";
+	private String fieldEmail = "teste@teste.com";
+	
 	// Methods have link with cucumber to execute the scenarios
 	/*@Given("^I'm already logged in$")
 		public void i_m_already_logged_in() throws Throwable {
@@ -81,6 +85,13 @@ public class ProjectSteps extends ManagePage {
 		managePage.btnCreateNewAccount();
 	}
 	
+	@When("^I fill up the valid user data form$")
+	public void i_fill_up_the_valid_user_data() throws Throwable {
+		managePage.fillUserName(fieldUserName);
+		managePage.fillRealName(fieldRealName);
+		managePage.fillEmail(fieldEmail);
+	}
+	
 	@When("^I fill up the userName (.*) on the form$")
 	public void i_fill_up_the_userName_on_the_form(String userName) {
 	    managePage.fillUserName(userName);
@@ -103,6 +114,13 @@ public class ProjectSteps extends ManagePage {
 	public void click_on_the_criar_usuario_button() throws Throwable {
 		managePage.btnCreateNewUser();
 		Thread.sleep(5000);
+	}
+	
+	@Then("^Will create the user$")
+	public void will_create_the_user()throws Throwable {
+		Thread.sleep(5000);
+		managePage.manageUsersTag();
+	assertEquals("testUser", validateUserCreated.getText());
 	}
 	
 	@Then("^Will validate the user$")
