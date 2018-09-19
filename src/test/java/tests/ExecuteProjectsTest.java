@@ -9,8 +9,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = {"src/test/java/features/Projects.feature"}, 
 				  // plugin = {"pretty","html:target/cucumber-report" },    
-				     glue = {"steps","hook"}//,
-				     //tags = "@CreateNewUserOnManageUsers" //"@CreateNewProject"
+				     glue = {"steps","hook"},
+				     tags = "@CreateNewTask" //"@CreateNewProject"
 				     
 				)
 
