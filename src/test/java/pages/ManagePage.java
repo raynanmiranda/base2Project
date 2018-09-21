@@ -230,18 +230,28 @@ public class ManagePage extends PageBase {
 		btnCreateNewTask.click();
 	}
 	
-	public String validadeExistTask(String task) {
+	public String validadeExistTask(String taskResult) {
 		
-
+		String task = "teste new task";
 		WebElement ListBoxtask = validateTask;
 		Select select = new Select(ListBoxtask);
+		int size = select.getOptions().size()-1;
 		
+		for(int i=0;i<size;i++) {
 		
-		if(select.equals("teste new task")) {
-			
-			task = "teste new task";
+		String text = select.getOptions().get(i).getText();	
+			if(text == task) {
+				
+				i = size;
+				taskResult = text;
+			}
+			else {
+				
+			}
+				
 		}
-		return task;
-		}
+		return taskResult;
+		
+	}
 	
 }

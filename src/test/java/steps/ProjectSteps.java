@@ -20,7 +20,7 @@ public class ProjectSteps extends ManagePage {
 	}
 
 	private String checkName = "testNewProject";
-	protected String task;
+	protected String textTask = "test new task";
 	public String checkUser;
 
 	private String fieldUserName = "testUser";
@@ -153,7 +153,7 @@ public class ProjectSteps extends ManagePage {
 	public void have_a_project_already() throws Throwable {
 		managePage.clickManageTag();
 		managePage.manageProjectTag();
-		assertEquals(checkName, managePage.nameProject);
+		assertEquals(checkName, managePage.validateProjectCreated.getText());
 	}
 
 	@When("^click on 'Criar Tarefa' button$")
@@ -171,15 +171,17 @@ public class ProjectSteps extends ManagePage {
 	}
 
 	@When("^Click on 'Criar Nova Tarefa' button$")
-	public void click_on_Criar_Nova_Tarefa_button() {
+	public void click_on_Criar_Nova_Tarefa_button() throws InterruptedException {
 		managePage.clickBtnCreateNewTask();
+		Thread.sleep(5000);
 	}
 
 	@Then("^Will have a task created$")
 	public void will_have_a_task_created() {
 		
-		managePage.validadeExistTask(task);
-		assertEquals("test new task", task);
+		String taskResult = null;
+		managePage.validadeExistTask(taskResult);
+		assertEquals(textTask,taskResult);
 		
 	}
 
