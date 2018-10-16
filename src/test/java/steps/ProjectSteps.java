@@ -27,13 +27,7 @@ public class ProjectSteps extends ManagePage {
 	private String fieldRealName = "testRealUser";
 	private String fieldEmail = "teste@teste.com";
 
-	// Methods have link with cucumber to execute the scenarios
-	/*
-	 * @Given("^I'm already logged in$") public void i_m_already_logged_in() throws
-	 * Throwable {
-	 * principalPage.openPage("http://mantis.raynan.base2.com.br/login_page.php");
-	 * principalPage.dataLogin(); }
-	 */
+	
 
 	@When("^I click on the 'Convidar Usuarios' button$")
 	public void i_click_on_the_Convidar_Usuarios_button() {
@@ -156,6 +150,11 @@ public class ProjectSteps extends ManagePage {
 		assertEquals(checkName, managePage.validateProjectCreated.getText());
 	}
 
+	@When("^click on 'Criar Tarefa' on SideBar$")
+	public void click_on_Criar_Tarefa_SideBar() {
+		managePage.clickBtnNewTaskSideBar();
+	}
+	
 	@When("^click on 'Criar Tarefa' button$")
 	public void click_on_Criar_Tarefa_button() {
 		managePage.clickBtnNewTask();
@@ -184,5 +183,41 @@ public class ProjectSteps extends ManagePage {
 		assertEquals(textTask,taskResult);
 		
 	}
+	
+	
+	//----------------EditTask----------------------
+	
+	@And("^click on 'Ver Tarefa' on SideBar$")
+	public void click_on_Ver_Tarefa_on_SideBar() throws Throwable {
+	    
+	}
+
+	@And("^Already have a task$")
+	public void already_have_a_task() throws Throwable {
+	   
+	}
+
+	@When("^Click on the pencil icon$")
+	public void click_on_the_pencil_icon() throws Throwable {
+	   
+	}
+
+	@When("^update the Task$")
+	public void update_the_Task() throws Throwable {
+	    
+	}
+
+	@When("^Save the new information$")
+	public void save_the_new_information() throws Throwable {
+	   
+	}
+
+	@Then("^Will have a task updated$")
+	public void will_have_a_task_updated() throws Throwable {
+	  
+	}
+
+	
+	
 
 }

@@ -72,6 +72,10 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='navbar-container']//*[@href='bug_report_page.php']")
 	public WebElement btnNewTask;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
+	public WebElement btnNewTaskSideBar;
+	
 
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
@@ -93,6 +97,10 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buglist']/tbody//*[@class='column-summary']")
 	public WebElement validateTask; // validate task exist
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
+	public WebElement updateTaskIcon;
+	
 	
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
@@ -190,6 +198,11 @@ public class ManagePage extends PageBase {
 
 	public void clickBtnNewTask() {
 		btnNewTask.click();
+	}
+	
+	public void clickBtnNewTaskSideBar() {
+		btnNewTaskSideBar.click();
+		
 	}
 
 	public void fillFrenquenceStatusTask() {

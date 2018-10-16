@@ -39,6 +39,15 @@ Scenario: Create New Task by Button
 	And  Fill up all form with valid data
 	And  Click on 'Criar Nova Tarefa' button
 	Then Will have a task created
+	
+@CreateNewTask-SideBarWay	
+Scenario: Create New Task by SideBar
+
+	And  have a project already
+	When click on 'Criar Tarefa' on SideBar 
+	And  Fill up all form with valid data
+	And  Click on 'Criar Nova Tarefa' button
+	Then Will have a task created
 
 @ValidateEmailsOfUser 
 Scenario Outline: Using Different e-mails 
@@ -60,3 +69,16 @@ Scenario Outline: Using Different e-mails
 		|test3     | invalid  | raynan.miranda@            |
 		|test4     | invalid  | raynan.miranda@base2.com,  |
 		|test5     | SameEmail| raynan@base2.com.br        |
+		
+
+@EditTask		
+Scenario: Edit Task
+
+	And  have a project already
+	And  click on 'Ver Tarefa' on SideBar
+	And  Already have a task 
+	When Click on the pencil icon 
+	And  update the Task
+	And  Save the new information
+	Then Will have a task updated
+
