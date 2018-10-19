@@ -1,7 +1,9 @@
 package pages;
 
+import java.util.List;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -95,11 +97,23 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='report_bug_form']//*[@type='submit']")
 	public WebElement btnCreateNewTask; // Button Criar Nova Tarefa
 
-	@FindBy(how = How.XPATH, using = "//*[@id='buglist']/tbody//*[@class='column-summary']")
+	@FindBy(how = How.XPATH, using = "//*[@id='buglist']/tbody")
 	public WebElement validateTask; // validate task exist
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement updateTaskIcon;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@class='input-sm']")
+	public WebElement categoryField;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@value='Adicionar Categoria']")
+	public WebElement btnAddCategory;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']//*[text()='Alterar']")
+	public WebElement btnEditCategory;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']")
+	public WebElement validateNewCategory;
 	
 	
 	public void btnSucessGeneral() {
@@ -245,26 +259,38 @@ public class ManagePage extends PageBase {
 	
 	public String validadeExistTask(String taskResult) {
 		
-		String task = "teste new task";
-		WebElement ListBoxtask = validateTask;
-		Select select = new Select(ListBoxtask);
-		int size = select.getOptions().size()-1;
+		String task = "Test new task";
+		int i,size;
+		List<WebElement> ColectTasks = validateTask.findElements(By.xpath("tr//*[@class='column-summary']"));
 		
-		for(int i=0;i<size;i++) {
+		size = ColectTasks.size();
 		
-		String text = select.getOptions().get(i).getText();	
-			if(text == task) {
+		for( i=0;i<size;i++) {
+
+				String text = ColectTasks.get(i).getText(); 
+				if(task == text){
+				   i = size;
+					taskResult = task;
+				}
 				
-				i = size;
-				taskResult = text;
+				taskResult = ColectTasks.get(i).getText();	
+				System.out.println(ColectTasks.get(i).getText());	
 			}
-			else {
-				
-			}
-				
-		}
+
 		return taskResult;
 		
 	}
+	
+	public void fillNewCategory(String newCategory) {
+		categoryField.clear();
+		categoryField.sendKeys(newCategory);
+		
+	}
+	
+	public void clickBtnAddCategory() {
+		btnAddCategory.click();
+	}
+	
+	
 	
 }

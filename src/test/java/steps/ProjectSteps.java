@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import junit.framework.Assert;
 import pages.ManagePage;
 import pages.PrincipalPage;
 
@@ -218,6 +219,23 @@ public class ProjectSteps extends ManagePage {
 	}
 
 	
+	//--------------Add Category of Project ---------------
+	
+	@When("^I insert the category \"([^\"]*)\" on field$")
+	public void i_insert_the_category_on_field(String newCategory) {
+		managePage.fillNewCategory(newCategory);
+	}
+	
+	@And("^Click on 'Adicionar Categoria'$")
+	public void click_on_adicionar_categoria() {
+		managePage.clickBtnAddCategory();
+	}
+	
+	@Then("^I will be able to see the new category added$")
+	public void i_will_be_able_to_see_the_new_category_added() {
+		assertEquals("newcategory", managePage.validateNewCategory.getText());
+		
+	}
 	
 
 }

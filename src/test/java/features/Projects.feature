@@ -71,14 +71,12 @@ Scenario Outline: Using Different e-mails
 		|test5     | SameEmail| raynan@base2.com.br        |
 		
 
-@EditTask		
-Scenario: Edit Task
+@AddCategoryOfProject
+Scenario: Add new category on Project
 
-	And  have a project already
-	And  click on 'Ver Tarefa' on SideBar
-	And  Already have a task 
-	When Click on the pencil icon 
-	And  update the Task
-	And  Save the new information
-	Then Will have a task updated
+And  have a project already
+When I insert the category "newcategory" on field
+And  Click on 'Adicionar Categoria'
+Then I will be able to see the new category added		
+
 
