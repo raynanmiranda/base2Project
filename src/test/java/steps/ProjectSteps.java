@@ -291,7 +291,29 @@ public class ProjectSteps extends ManagePage {
 		
 		Thread.sleep(5000);
 		
-		
-		
 	}
+	
+	//-----------------------------Delete all Tasks -----------------------------------
+	
+	@And("^click on 'Ver Tarefa' on sidebar$")
+	public void click_on_ver_tarefa_on_sidebar() {
+		managePage.clickBtnViewTaskSideBar();
+	}
+	
+	@When("^click on select All tasks$")
+	public void click_on_select_all_tasks() {
+		managePage.clickCheckSelectAllTasks();
+	}
+	
+	@And("^select 'Apagar' on dropDown$")
+	public void select_apagar_on_dropDown() {
+		managePage.selectActionsTask("DELETE");
+	}
+	
+	@Then("^Will delete all tasks$")
+	public void will_delete_all_tasks() throws InterruptedException {
+		
+		Thread.sleep(5000);
+	}
+	
 }

@@ -78,6 +78,10 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement btnNewTaskSideBar;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/view_all_bug_page.php']")
+	public WebElement btnViewTaskSideBar;
+	
+	
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
 
@@ -101,6 +105,16 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement updateTaskIcon;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@class='lbl padding-6']")
+	public WebElement checkSelectAllTasks;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@name='action']")
+	public WebElement selectionDropDownActionTask;
+	
+	@FindBy(how = How.XPATH, using = "//*[@value='OK']")
+	public WebElement btnOkActionTask;
+	
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@class='input-sm']")
 	public WebElement categoryField;
@@ -330,4 +344,27 @@ public class ManagePage extends PageBase {
 
 		btnConfirmDeleteCategory.click();
 	}
+	
+	public void clickBtnViewTaskSideBar() {
+		btnViewTaskSideBar.click();
+	}
+	
+	public void clickCheckSelectAllTasks() {
+		checkSelectAllTasks.click();
+	}
+	
+	public void selectActionsTask(String typeAction) {
+		
+		switch(typeAction.toLowerCase()) {
+		
+		case "delete":
+			WebElement deleteAction = selectionDropDownActionTask.findElement(By.xpath("//*[@value='DELETE']"));
+			deleteAction.click();
+			break;
+		default:
+			
+			break;
+		}
+	}
+	
 }

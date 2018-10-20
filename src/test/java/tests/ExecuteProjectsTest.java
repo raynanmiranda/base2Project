@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 				 features = {"src/test/java/features/Projects.feature"}, 
 				  // plugin = {"pretty","html:target/cucumber-report" },    
 				     glue = {"steps","hook"},
-				     tags = {"@AddCategoryOfProject,@EditCategoryOfProject,@DeleteCategoryOfProject"} 
+				     tags = {"@DeleteAllTask"} 
 				     
 				)
 

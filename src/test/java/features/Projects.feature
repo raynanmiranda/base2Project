@@ -96,3 +96,13 @@ And  have a category updated already
 When Click on 'Apagar' category 
 And  Confirm delete category of project
 Then Category will be deleted
+
+
+@DeleteAllTask	
+Scenario: Delete all Tasks
+
+	And  have a project already
+	And  click on 'Ver Tarefa' on sidebar 
+	When click on select All tasks
+	And  select 'Apagar' on dropDown
+	Then Will delete all tasks
