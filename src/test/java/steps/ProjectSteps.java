@@ -222,8 +222,8 @@ public class ProjectSteps extends ManagePage {
 	//--------------Add Category of Project ---------------
 	
 	@When("^I insert the category \"([^\"]*)\" on field$")
-	public void i_insert_the_category_on_field(String newCategory) {
-		managePage.fillNewCategory(newCategory);
+	public void i_insert_the_category_on_field(String newCategoryName) {
+		managePage.fillNewCategory(newCategoryName);
 	}
 	
 	@And("^Click on 'Adicionar Categoria'$")
@@ -237,5 +237,35 @@ public class ProjectSteps extends ManagePage {
 		
 	}
 	
-
+	
+	//--------------Edit Category of Project ---------------
+	
+	@And("^have a category already$")
+	public void have_a_category_already() {
+		assertEquals("newcategory", managePage.validateNewCategory.getText());
+	}
+	
+	
+	@When("^Click on edit the category 'newcategory'$")
+	public void click_on_edit_the_category_newcategor() {
+		managePage.clickBtnEditCategory();
+	}
+	
+	@And("^update the category$")
+	public void update_the_category() {
+		managePage.fillUpdateCategoryName("newcategoryUpdated");
+		managePage.clickBtnUpdateCategory();
+	}
+	
+	@Then("^I will be able to save the update$")
+	public void I_will_be_able_to_save_the_update() throws InterruptedException {
+		
+		Thread.sleep(5000);
+		assertEquals("newcategoryUpdated", managePage.validateCategoryUpdated.getText());
+		
+		
+		
+	}
+	
+	
 }

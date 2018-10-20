@@ -79,4 +79,11 @@ When I insert the category "newcategory" on field
 And  Click on 'Adicionar Categoria'
 Then I will be able to see the new category added		
 
+@EditCategoryOfProject
+Scenario: Edit a category on Project
 
+And  have a project already
+And  have a category already
+When Click on edit the category 'newcategory' 
+And  update the category
+Then I will be able to save the update	

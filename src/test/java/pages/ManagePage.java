@@ -106,15 +106,24 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@class='input-sm']")
 	public WebElement categoryField;
 	
+	@FindBy(how = How.ID, using = "proj-category-name")
+	public WebElement updateCategoryField;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@value='Adicionar Categoria']")
 	public WebElement btnAddCategory;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']//*[text()='Alterar']")
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//tr[2]//*[text()='Alterar']")
 	public WebElement btnEditCategory;
+	
+	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Categoria']")
+	public WebElement btnSalveUpdateCategory;
+	
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']")
 	public WebElement validateNewCategory;
 	
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategoryUpdated']")
+	public WebElement validateCategoryUpdated;
 	
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
@@ -292,5 +301,21 @@ public class ManagePage extends PageBase {
 	}
 	
 	
+	public void clickBtnEditCategory() {
+		
+		btnEditCategory.click();
+	}
+	
+	public void fillUpdateCategoryName(String updateName) {
+		
+		updateCategoryField.clear();
+		updateCategoryField.sendKeys(updateName);
+	}
+	
+	public void clickBtnUpdateCategory() {
+		
+		btnSalveUpdateCategory.click();
+		
+	}
 	
 }
