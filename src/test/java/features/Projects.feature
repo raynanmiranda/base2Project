@@ -87,3 +87,12 @@ And  have a category already
 When Click on edit the category 'newcategory' 
 And  update the category
 Then I will be able to save the update	
+
+@DeleteCategoryOfProject
+Scenario: Delete a category on Project
+
+And  have a project already
+And  have a category updated already
+When Click on 'Apagar' category 
+And  Confirm delete category of project
+Then Category will be deleted

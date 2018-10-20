@@ -74,10 +74,9 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='navbar-container']//*[@href='bug_report_page.php']")
 	public WebElement btnNewTask;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement btnNewTaskSideBar;
-	
 
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
@@ -99,32 +98,37 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buglist']/tbody")
 	public WebElement validateTask; // validate task exist
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement updateTaskIcon;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@class='input-sm']")
 	public WebElement categoryField;
-	
+
 	@FindBy(how = How.ID, using = "proj-category-name")
 	public WebElement updateCategoryField;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@value='Adicionar Categoria']")
 	public WebElement btnAddCategory;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//tr[2]//*[text()='Alterar']")
 	public WebElement btnEditCategory;
-	
+
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//tr[2]//*[text()='Apagar']")
+	public WebElement btnDeleteCategory;
+
+	@FindBy(how = How.XPATH, using = "//*[@value='Apagar Categoria']")
+	public WebElement btnConfirmDeleteCategory;
+
 	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Categoria']")
 	public WebElement btnSalveUpdateCategory;
-	
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']")
 	public WebElement validateNewCategory;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategoryUpdated']")
 	public WebElement validateCategoryUpdated;
-	
+
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
 	}
@@ -222,10 +226,10 @@ public class ManagePage extends PageBase {
 	public void clickBtnNewTask() {
 		btnNewTask.click();
 	}
-	
+
 	public void clickBtnNewTaskSideBar() {
 		btnNewTaskSideBar.click();
-		
+
 	}
 
 	public void fillFrenquenceStatusTask() {
@@ -265,57 +269,65 @@ public class ManagePage extends PageBase {
 	public void clickBtnCreateNewTask() {
 		btnCreateNewTask.click();
 	}
-	
-	public String validadeExistTask(String taskResult) {
-		
-		String task = "Test new task";
-		int i,size;
-		List<WebElement> ColectTasks = validateTask.findElements(By.xpath("tr//*[@class='column-summary']"));
-		
-		size = ColectTasks.size();
-		
-		for( i=0;i<size;i++) {
 
-				String text = ColectTasks.get(i).getText(); 
-				if(task == text){
-				   i = size;
-					taskResult = task;
-				}
-				
-				taskResult = ColectTasks.get(i).getText();	
-				System.out.println(ColectTasks.get(i).getText());	
+	public String validadeExistTask(String taskResult) {
+
+		String task = "Test new task";
+		int i, size;
+		List<WebElement> ColectTasks = validateTask.findElements(By.xpath("tr//*[@class='column-summary']"));
+
+		size = ColectTasks.size();
+
+		for (i = 0; i < size; i++) {
+
+			String text = ColectTasks.get(i).getText();
+			if (task == text) {
+				i = size;
+				taskResult = task;
 			}
 
+			taskResult = ColectTasks.get(i).getText();
+			System.out.println(ColectTasks.get(i).getText());
+		}
+
 		return taskResult;
-		
+
 	}
-	
+
 	public void fillNewCategory(String newCategory) {
 		categoryField.clear();
 		categoryField.sendKeys(newCategory);
-		
+
 	}
-	
+
 	public void clickBtnAddCategory() {
 		btnAddCategory.click();
 	}
-	
-	
+
 	public void clickBtnEditCategory() {
-		
+
 		btnEditCategory.click();
 	}
-	
+
 	public void fillUpdateCategoryName(String updateName) {
-		
+
 		updateCategoryField.clear();
 		updateCategoryField.sendKeys(updateName);
 	}
-	
+
 	public void clickBtnUpdateCategory() {
-		
+
 		btnSalveUpdateCategory.click();
-		
+
+	}
+
+	public void clickBtnDeleteCategory() {
+
+		btnDeleteCategory.click();
 	}
 	
+	public void clickBtnConfirmDeleteCategory() {
+
+		btnConfirmDeleteCategory.click();
+	}
 }

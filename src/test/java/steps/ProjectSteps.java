@@ -1,6 +1,10 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -247,7 +251,7 @@ public class ProjectSteps extends ManagePage {
 	
 	
 	@When("^Click on edit the category 'newcategory'$")
-	public void click_on_edit_the_category_newcategor() {
+	public void click_on_edit_the_category_newcategory() {
 		managePage.clickBtnEditCategory();
 	}
 	
@@ -262,10 +266,32 @@ public class ProjectSteps extends ManagePage {
 		
 		Thread.sleep(5000);
 		assertEquals("newcategoryUpdated", managePage.validateCategoryUpdated.getText());
+			
+	}
+	
+	//--------------Delete Category of Project ---------------
+	
+	@And("^have a category updated already$")
+	public void have_a_category_updated_already() {
+		assertEquals("newcategoryUpdated", managePage.validateCategoryUpdated.getText());
+	} 
+	
+	@When("^Click on 'Apagar' category$")
+	public void click_on_apagar_category() {
+		managePage.clickBtnDeleteCategory();
+	}  
+	
+	@And("^Confirm delete category of project$")
+	public void confirm_delete_category_of_project() {
+		managePage.clickBtnConfirmDeleteCategory();
+	}
+	
+	@Then("^Category will be deleted$")
+	public void category_will_be_deleted() throws InterruptedException {
+		
+		Thread.sleep(5000);
 		
 		
 		
 	}
-	
-	
 }
