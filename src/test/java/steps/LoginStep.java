@@ -2,15 +2,20 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.Log;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import hook.HookSteps;
 import pages.LoginPage;
-import utils.extentReport;
+import utils.getScreenShot;
+
 
 public class LoginStep extends LoginPage{
 
@@ -21,16 +26,17 @@ public class LoginStep extends LoginPage{
 			loginPage = new LoginPage();
 		}
 
+	
 				//********* LOGIN SUCESS ***********
 		
 		// Methods have link with cucumber to execute the scenarios
 		@Given("^I want to Login on the \"([^\"]*)\"$")
 		public void i_want_to_Login_on_the(String page){
-		    loginPage.openPage(page);
+		    HookSteps.log = HookSteps.report.createTest("CaptureScreenShoot");
+			loginPage.openPage(page);
 		    try {
-		    	
-//		    	extentReport.log.log(Status.INFO, "Mantis Page opened"+ extentReport.captureScreen());
-//		        extentReport.log.log(Status.PASS,Log.addScreenCaptureFromPath(captureScreen()));
+		    	HookSteps.log.log(Status.INFO, "Mantis Page opened"+ getScreenShot.captureScreen());
+		        HookSteps.log.log(Status.PASS, "SnapShoot bellow"+HookSteps.log.addScreenCaptureFromPath(getScreenShot.captureScreen()));
 		    } catch (Exception e) {
 		        e.printStackTrace();
 		    }
