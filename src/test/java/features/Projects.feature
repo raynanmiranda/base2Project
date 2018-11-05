@@ -30,25 +30,25 @@ Scenario: Create a New user account
 	When I fill up the valid user data form 
 	And Click on the 'Criar Usuario' button 
 	Then Will create the user 
-
-@CreateNewTask	
-Scenario: Create New Task by Button
-
-	And  have a project already
-	When click on 'Criar Tarefa' button 
-	And  Fill up all form with valid data
-	And  Click on 'Criar Nova Tarefa' button
-	Then Will have a task created
 	
-@CreateNewTask-SideBarWay	
-Scenario: Create New Task by SideBar
+@CreateNewTask 
+Scenario: Create New Task by Button 
 
-	And  have a project already
+	And  have a project already 
+	When click on 'Criar Tarefa' button 
+	And  Fill up all form with valid data 
+	And  Click on 'Criar Nova Tarefa' button 
+	Then Will have a task created 
+	
+@CreateNewTask-SideBarWay 
+Scenario: Create New Task by SideBar 
+
+	And  have a project already 
 	When click on 'Criar Tarefa' on SideBar 
-	And  Fill up all form with valid data
-	And  Click on 'Criar Nova Tarefa' button
-	Then Will have a task created
-
+	And  Fill up all form with valid data 
+	And  Click on 'Criar Nova Tarefa' button 
+	Then Will have a task created 
+	
 @ValidateEmailsOfUser 
 Scenario Outline: Using Different e-mails 
 
@@ -70,39 +70,41 @@ Scenario Outline: Using Different e-mails
 		|test4     | invalid  | raynan.miranda@base2.com,  |
 		|test5     | SameEmail| raynan@base2.com.br        |
 		
+		
+@AddCategoryOfProject 
+Scenario: Add new category on Project 
 
-@AddCategoryOfProject
-Scenario: Add new category on Project
+	And  have a project already 
+	When I insert the category "newcategory" on field 
+	And  Click on 'Adicionar Categoria' 
+	Then I will be able to see the new category added 
+	
+@EditCategoryOfProject 
+Scenario: Edit a category on Project 
 
-And  have a project already
-When I insert the category "newcategory" on field
-And  Click on 'Adicionar Categoria'
-Then I will be able to see the new category added		
+	And  have a project already 
+	And  have a category already 
+	When Click on edit the category 'newcategory' 
+	And  update the category 
+	Then I will be able to save the update 
+	
+@DeleteCategoryOfProject 
+Scenario: Delete a category on Project 
 
-@EditCategoryOfProject
-Scenario: Edit a category on Project
+	And  have a project already 
+	And  have a category updated already 
+	When Click on 'Apagar' category 
+	And  Confirm delete category of project 
+	Then Category will be deleted 
+	
+	
+@DeleteAllTask 
+Scenario: Delete all Tasks 
 
-And  have a project already
-And  have a category already
-When Click on edit the category 'newcategory' 
-And  update the category
-Then I will be able to save the update	
-
-@DeleteCategoryOfProject
-Scenario: Delete a category on Project
-
-And  have a project already
-And  have a category updated already
-When Click on 'Apagar' category 
-And  Confirm delete category of project
-Then Category will be deleted
-
-
-@DeleteAllTask	
-Scenario: Delete all Tasks
-
-	And  have a project already
+	And  have a project already 
 	And  click on 'Ver Tarefa' on sidebar 
-	When click on select All tasks
-	And  select 'Apagar' on dropDown
+	When click on select All tasks 
+	And  select 'Apagar' on dropDown 
 	Then Will delete all tasks
+	
+	

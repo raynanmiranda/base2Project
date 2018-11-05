@@ -2,11 +2,15 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Log;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.LoginPage;
+import utils.extentReport;
 
 public class LoginStep extends LoginPage{
 
@@ -23,6 +27,13 @@ public class LoginStep extends LoginPage{
 		@Given("^I want to Login on the \"([^\"]*)\"$")
 		public void i_want_to_Login_on_the(String page){
 		    loginPage.openPage(page);
+		    try {
+		    	
+//		    	extentReport.log.log(Status.INFO, "Mantis Page opened"+ extentReport.captureScreen());
+//		        extentReport.log.log(Status.PASS,Log.addScreenCaptureFromPath(captureScreen()));
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
 		    
 		}
 
