@@ -10,10 +10,15 @@ import java.text.SimpleDateFormat;
 import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestResult;
 import org.apache.commons.io.FileUtils;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Log;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import hook.HookSteps;
 
 
 public class getScreenShot {
@@ -42,6 +47,29 @@ public class getScreenShot {
 		}
 		return str;
 		}
+	
+	public void getResult(ITestResult result)  throws IOException{
+		
+		if(result.getStatus()== ITestResult.SUCCESS) {
+			String screen = captureScreen();
+			HookSteps.log.log(Status.PASS, ""+ HookSteps.log.addScreenCaptureFromPath(screen));
+			HookSteps.log.log(Status.PASS, result.getName()+"Test Passed Successfully");
+		}
+		else if(result.getStatus()== ITestResult.SKIP) {
+			HookSteps.log.log(Status.SKIP, result.getName()+"Test Skipped duo to: "+ result.getThrowable());
+		}
+		else if(result.getStatus()== ITestResult.FAILURE) {
+			HookSteps.log.log(Status.FAIL, result.getName()+"Test is Failed"+ result.getThrowable());
+			String screen = captureScreen();
+			HookSteps.log.log(Status.FAIL, ""+ HookSteps.log.addScreenCaptureFromPath(screen));
+		}
+		else if(result.getStatus()== ITestResult.STARTED) {
+			HookSteps.log.log(Status.INFO, result.getName()+"Test has Started");
+		}
+		
+		
+	}
+	
 	
 }
 	

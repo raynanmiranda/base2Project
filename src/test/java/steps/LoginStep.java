@@ -2,8 +2,12 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.Log;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -31,15 +35,14 @@ public class LoginStep extends LoginPage{
 		
 		// Methods have link with cucumber to execute the scenarios
 		@Given("^I want to Login on the \"([^\"]*)\"$")
-		public void i_want_to_Login_on_the(String page){
-		    HookSteps.log = HookSteps.report.createTest("CaptureScreenShoot");
+		public void i_want_to_Login_on_the(String page) throws IOException{
+		    //HookSteps.log = HookSteps.report.createTest("CaptureScreenShoot");
 			loginPage.openPage(page);
-		    try {
-		    	HookSteps.log.log(Status.INFO, "Mantis Page opened"+ getScreenShot.captureScreen());
-		        HookSteps.log.log(Status.PASS, "SnapShoot bellow"+HookSteps.log.addScreenCaptureFromPath(getScreenShot.captureScreen()));
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
+			
+			//HookSteps.log.pass("Mantis Page opened with success!", MediaEntityBuilder.createScreenCaptureFromPath(getScreenShot.captureScreen()).build());
+			
+			//HookSteps.log.log(Status.PASS, "Mantis Page opened"+HookSteps.log.addScreenCaptureFromPath(getScreenShot.captureScreen()));
+			
 		    
 		}
 
