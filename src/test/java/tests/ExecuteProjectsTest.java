@@ -1,6 +1,11 @@
 package tests;
 
+import java.io.File;
+
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+
+import com.vimalselvam.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -10,10 +15,20 @@ import cucumber.api.junit.Cucumber;
 				 features = {"src/test/java/features/Projects.feature"}, 
 				  // plugin = {"pretty","html:target/cucumber-report" },    
 				     glue = {"steps","hook"},
+				    		 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"},
 				     tags = {"@DeleteAllTask"} 
 				     
 				)
 
 public class ExecuteProjectsTest {
 
+	@AfterClass
+	public static void teardown() {
+
+		
+		Reporter.loadXMLConfig(new File("target/extent-Config.xml"));
+		Reporter.setSystemInfo("user", System.getProperty("user.name"));
+		Reporter.setSystemInfo("os", "Windows 10");
+		Reporter.setTestRunnerOutput("test runner output message Project");
+	}
 }
