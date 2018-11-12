@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestResult;
+
 
 import com.vimalselvam.cucumber.listener.Reporter;
 
