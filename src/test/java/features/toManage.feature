@@ -33,4 +33,4 @@ Scenario: Access the 'Gerenciar Marcadores' tab
 	And  Change the marker information
 	And  I click on update marker button
 	Then Will be updated the Marker
-	Then will be created the new Marker 
+	

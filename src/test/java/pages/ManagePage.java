@@ -163,7 +163,13 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='table table-striped table-bordered table-condensed table-hover']")
 	public WebElement validateMarkerCreated;
 	
-
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Atualizar Marcador']")
+	public WebElement btnUpdateMarker;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='widget-title lighter']")
+	public WebElement validateAccessMarker;
+	
+	
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
 	}
@@ -422,6 +428,26 @@ public class ManagePage extends PageBase {
 		WebElement markerElement;
 		markerElement = validateMarkerCreated.findElement(By.xpath("tbody//*[text()='"+marker+"']"));
 		markerElement.click();
+		
+	}
+	
+	public void validateMarkerAccessedSucessfuly(String markerName) {
+		assertEquals(true, (validateAccessMarker.getText().contains(markerName)));
+	}
+	
+	public void clickBtnUpdateMarker() {
+		
+		btnUpdateMarker.click();
+	}
+	
+	public void updateMarkerName(String name) {
+		markerNameField.clear();
+		markerNameField.sendKeys(name);	
+	}
+	
+	public void updateMarkerDescription(String description) {
+		markerDescriptionField.clear();
+		markerDescriptionField.sendKeys(description);
 		
 	}
 }

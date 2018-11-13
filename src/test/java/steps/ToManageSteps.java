@@ -8,6 +8,7 @@ import pages.ManagePage;
 public class ToManageSteps extends ManagePage{
 
 	String markerName = null;
+	String descriptionName = null;
 	
 	// -------------------- Access Markers Tab ------------------------
 	
@@ -39,6 +40,8 @@ public class ToManageSteps extends ManagePage{
 	@And("^Fill up the description \"([^\"]*)\"$")
 	public void fill_up_the_description(String description) throws Throwable {
 	    fillUpmarkerDescriptionField(description);
+	    descriptionName = description;
+	    
 	}
 
 	@And("^I click on 'Criar Marcador'$")
@@ -56,21 +59,23 @@ public class ToManageSteps extends ManagePage{
 	@When("^I click on marker created$")
 	public void i_click_on_marker_created() throws Throwable {
 		clickOnMarker(markerName);
+		validateMarkerAccessedSucessfuly(markerName);
 	}
 
 	@When("^I click on update Marker$")
 	public void i_click_on_update_Marker() throws Throwable {
-	    
+		clickBtnUpdateMarker();
 	}
 
 	@When("^Change the marker information$")
 	public void change_the_marker_information() throws Throwable {
-	    
+	    updateMarkerName(markerName+"2");
+	    updateMarkerDescription(descriptionName+"2");
 	}
 
 	@When("^I click on update marker button$")
 	public void i_click_on_update_marker_button() throws Throwable {
-	    
+		clickBtnUpdateMarker();
 	}
 
 	@Then("^Will be updated the Marker$")
