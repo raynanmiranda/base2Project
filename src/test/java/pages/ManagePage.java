@@ -1,5 +1,7 @@
 package pages;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Random;
 
@@ -142,6 +144,25 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategoryUpdated']")
 	public WebElement validateCategoryUpdated;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_tags_page.php']")
+	public WebElement manageMarkersTab;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='active']//*[text()='Gerenciar Marcadores']")
+	public WebElement validateManageMarkersTabActive;
+	
+	@FindBy(how = How.ID, using = "tag-name")
+	public WebElement markerNameField;
+	
+	@FindBy(how = How.ID, using = "tag-description")
+	public WebElement markerDescriptionField;
+	
+	@FindBy(how = How.NAME, using = "config_set")
+	public WebElement btnCreateMarker;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='table table-striped table-bordered table-condensed table-hover']")
+	public WebElement validateMarkerCreated;
+	
 
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
@@ -367,4 +388,40 @@ public class ManagePage extends PageBase {
 		}
 	}
 	
+	public void clickManageBookMarksTab() {
+		manageMarkersTab.click();
+		
+	}
+	public void validateManageMarkersTab() {
+		assertEquals("Gerenciar Marcadores", validateManageMarkersTabActive.getText());
+	}
+	
+	public void fillUpmarkerNameField(String markerName) {
+		markerNameField.clear();
+		markerNameField.sendKeys(markerName);
+		
+	}
+	
+	public void fillUpmarkerDescriptionField(String markerDescription) {
+		markerDescriptionField.clear();
+		markerDescriptionField.sendKeys(markerDescription);
+		
+	}
+	
+	public void clickBtnCreateMarker() {
+		btnCreateMarker.click();
+		
+	}
+	
+	public void validateMarkerCreated(String markerName) {
+		assertEquals(markerName, (validateMarkerCreated.findElement(By.xpath("tbody//*[text()='"+markerName+"']")).getText()));
+	}
+	
+	public void clickOnMarker(String marker) {
+		
+		WebElement markerElement;
+		markerElement = validateMarkerCreated.findElement(By.xpath("tbody//*[text()='"+marker+"']"));
+		markerElement.click();
+		
+	}
 }
