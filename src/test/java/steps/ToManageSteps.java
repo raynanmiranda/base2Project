@@ -9,6 +9,8 @@ public class ToManageSteps extends ManagePage{
 
 	String markerName = null;
 	String descriptionName = null;
+	String markerNameUpdated = null;
+	String descriptionNameUpdated = null;
 	
 	// -------------------- Access Markers Tab ------------------------
 	
@@ -69,8 +71,10 @@ public class ToManageSteps extends ManagePage{
 
 	@When("^Change the marker information$")
 	public void change_the_marker_information() throws Throwable {
-	    updateMarkerName(markerName+"2");
-	    updateMarkerDescription(descriptionName+"2");
+	    markerNameUpdated = markerName+"2";
+	    descriptionNameUpdated = descriptionName+"2";
+		updateMarkerName(markerNameUpdated);
+	    updateMarkerDescription(descriptionNameUpdated);
 	}
 
 	@When("^I click on update marker button$")
@@ -80,7 +84,7 @@ public class ToManageSteps extends ManagePage{
 
 	@Then("^Will be updated the Marker$")
 	public void will_be_updated_the_Marker() throws Throwable {
-	    
+		validateMarkerCreated(markerNameUpdated);
 	}
 	
 }
