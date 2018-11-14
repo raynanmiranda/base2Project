@@ -1,6 +1,7 @@
 package pages;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import java.util.List;
 import java.util.Random;
@@ -82,8 +83,7 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/view_all_bug_page.php']")
 	public WebElement btnViewTaskSideBar;
-	
-	
+
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
 
@@ -107,16 +107,15 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
 	public WebElement updateTaskIcon;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@class='lbl padding-6']")
 	public WebElement checkSelectAllTasks;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@name='action']")
 	public WebElement selectionDropDownActionTask;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@value='OK']")
 	public WebElement btnOkActionTask;
-	
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@class='input-sm']")
 	public WebElement categoryField;
@@ -144,32 +143,34 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategoryUpdated']")
 	public WebElement validateCategoryUpdated;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_tags_page.php']")
 	public WebElement manageMarkersTab;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='active']//*[text()='Gerenciar Marcadores']")
 	public WebElement validateManageMarkersTabActive;
-	
+
 	@FindBy(how = How.ID, using = "tag-name")
 	public WebElement markerNameField;
-	
+
 	@FindBy(how = How.ID, using = "tag-description")
 	public WebElement markerDescriptionField;
-	
+
 	@FindBy(how = How.NAME, using = "config_set")
 	public WebElement btnCreateMarker;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='table-responsive']")
 	public WebElement validateMarkerCreated;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Atualizar Marcador']")
 	public WebElement btnUpdateMarker;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='widget-title lighter']")
 	public WebElement validateAccessMarker;
-	
-	
+
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Apagar Marcador']")
+	public WebElement btnDeleteMarker;
+
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
 	}
@@ -366,88 +367,102 @@ public class ManagePage extends PageBase {
 
 		btnDeleteCategory.click();
 	}
-	
+
 	public void clickBtnConfirmDeleteCategory() {
 
 		btnConfirmDeleteCategory.click();
 	}
-	
+
 	public void clickBtnViewTaskSideBar() {
 		btnViewTaskSideBar.click();
 	}
-	
+
 	public void clickCheckSelectAllTasks() {
 		checkSelectAllTasks.click();
 	}
-	
+
 	public void selectActionsTask(String typeAction) {
-		
-		switch(typeAction.toLowerCase()) {
-		
+
+		switch (typeAction.toLowerCase()) {
+
 		case "delete":
 			WebElement deleteAction = selectionDropDownActionTask.findElement(By.xpath("//*[@value='DELETE']"));
 			deleteAction.click();
 			break;
 		default:
-			
+
 			break;
 		}
 	}
-	
+
 	public void clickManageBookMarksTab() {
 		manageMarkersTab.click();
-		
+
 	}
+
 	public void validateManageMarkersTab() {
 		assertEquals("Gerenciar Marcadores", validateManageMarkersTabActive.getText());
 	}
-	
+
 	public void fillUpmarkerNameField(String markerName) {
 		markerNameField.clear();
 		markerNameField.sendKeys(markerName);
-		
+
 	}
-	
+
 	public void fillUpmarkerDescriptionField(String markerDescription) {
 		markerDescriptionField.clear();
 		markerDescriptionField.sendKeys(markerDescription);
-		
+
 	}
-	
+
 	public void clickBtnCreateMarker() {
 		btnCreateMarker.click();
-		
+
 	}
-	
+
 	public void validateMarkerCreated(String markerName) {
-		assertEquals(markerName, (validateMarkerCreated.findElement(By.xpath("//td//*[text()='"+markerName+"']")).getText()));
+		assertEquals(markerName,
+				(validateMarkerCreated.findElement(By.xpath("//td//*[text()='" + markerName + "']")).getText()));
 	}
-	
+
 	public void clickOnMarker(String markerName) {
-		
+
 		WebElement markerElement;
-		markerElement = validateMarkerCreated.findElement(By.xpath("//td//*[text()='"+markerName+"']"));
+		markerElement = validateMarkerCreated.findElement(By.xpath("//td//*[text()='" + markerName + "']"));
 		markerElement.click();
-		
+
 	}
-	
+
 	public void validateMarkerAccessedSucessfuly(String markerName) {
 		assertEquals(true, (validateAccessMarker.getText().contains(markerName)));
 	}
-	
+
 	public void clickBtnUpdateMarker() {
-		
+
 		btnUpdateMarker.click();
 	}
-	
+
 	public void updateMarkerName(String name) {
 		markerNameField.clear();
-		markerNameField.sendKeys(name);	
+		markerNameField.sendKeys(name);
 	}
-	
+
 	public void updateMarkerDescription(String description) {
 		markerDescriptionField.clear();
 		markerDescriptionField.sendKeys(description);
-		
+
 	}
+
+	public void clickOnBtnDeleteMarker() {
+
+		btnDeleteMarker.click();
+	}
+
+	public void validateMarkerDeleted(String markerName) {
+		// assertEquals(markerName,
+		// (validateMarkerCreated.findElement(By.xpath("//td//*[text()='"+markerName+"']")).getText()).isEmpty());
+
+	}
+
 }

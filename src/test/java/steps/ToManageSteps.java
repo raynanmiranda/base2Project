@@ -5,15 +5,15 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.ManagePage;
 
-public class ToManageSteps extends ManagePage{
+public class ToManageSteps extends ManagePage {
 
 	String markerName = null;
 	String descriptionName = null;
 	String markerNameUpdated = null;
 	String descriptionNameUpdated = null;
-	
+
 	// -------------------- Access Markers Tab ------------------------
-	
+
 	@When("^I click on the 'Gerenciar' sidebar$")
 	public void i_click_on_the_Gerenciar_sidebar() throws Throwable {
 		clickManageTag();
@@ -21,44 +21,43 @@ public class ToManageSteps extends ManagePage{
 
 	@And("^Click on the 'Gerenciar Marcadores' tab$")
 	public void click_on_the_Gerenciar_Marcadores_tab() throws Throwable {
-	    clickManageBookMarksTab();
+		clickManageBookMarksTab();
 	}
 
 	@Then("^will be able to manage and create bookMarks$")
 	public void will_be_able_to_manage_and_create_bookMarks() throws Throwable {
 		validateManageMarkersTab();
 	}
-	
-	
+
 	// ------------------------- Creating New Marker ----------------------
-	
+
 	@When("^I Fill up the name \"([^\"]*)\"$")
 	public void i_Fill_up_the_name(String name) throws Throwable {
 		validateManageMarkersTab();
 		fillUpmarkerNameField(name);
-	    markerName = name;
+		markerName = name;
 	}
 
 	@And("^Fill up the description \"([^\"]*)\"$")
 	public void fill_up_the_description(String description) throws Throwable {
-	    fillUpmarkerDescriptionField(description);
-	    descriptionName = description;
-	    
+		fillUpmarkerDescriptionField(description);
+		descriptionName = description;
+
 	}
 
 	@And("^I click on 'Criar Marcador'$")
 	public void i_click_on_Criar_Marcador() throws Throwable {
-	    clickBtnCreateMarker();
+		clickBtnCreateMarker();
 	}
 
 	@Then("^will be created the new Marker$")
 	public void will_be_created_the_new_Marker() throws Throwable {
-	   Thread.sleep(3000);
+		Thread.sleep(3000);
 		validateMarkerCreated(markerName);
 	}
-	
+
 	// ------------------- Update Marker -------------------------------------
-	
+
 	@When("^I click on marker created$")
 	public void i_click_on_marker_created() throws Throwable {
 		clickOnMarker(markerName);
@@ -72,10 +71,10 @@ public class ToManageSteps extends ManagePage{
 
 	@When("^Change the marker information$")
 	public void change_the_marker_information() throws Throwable {
-	    markerNameUpdated = markerName+"2";
-	    descriptionNameUpdated = descriptionName+"2";
+		markerNameUpdated = markerName + "2";
+		descriptionNameUpdated = descriptionName + "2";
 		updateMarkerName(markerNameUpdated);
-	    updateMarkerDescription(descriptionNameUpdated);
+		updateMarkerDescription(descriptionNameUpdated);
 	}
 
 	@When("^I click on update marker button$")
@@ -89,5 +88,24 @@ public class ToManageSteps extends ManagePage{
 		clickManageBookMarksTab();
 		validateMarkerCreated(markerNameUpdated);
 	}
-	
+
+	// --------------------- Delete Marker ----------------------------------
+
+	@And("^I click on delete marker$")
+	public void i_click_on_delete_Marker() throws Throwable {
+		clickOnBtnDeleteMarker();
+
+	}
+
+	@And("^I click on confirm delete Marker$")
+	public void i_click_on_confirm_delete_Marker() throws Throwable {
+		Thread.sleep(100);
+		clickOnBtnDeleteMarker();
+	}
+
+	@Then("^Will be deleted the Marker$")
+	public void will_be_deleted_the_Marker() throws Throwable {
+		validateMarkerDeleted(markerName);
+	}
+
 }

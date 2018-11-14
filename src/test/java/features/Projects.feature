@@ -71,40 +71,40 @@ Scenario Outline: Using Different e-mails
 		|test5     | SameEmail| raynan@base2.com.br        |
 		
 		
-@AddCategoryOfProject 
-Scenario: Add new category on Project 
-
-	And  have a project already 
-	When I insert the category "newcategory" on field 
-	And  Click on 'Adicionar Categoria' 
-	Then I will be able to see the new category added 
-	
-@EditCategoryOfProject 
-Scenario: Edit a category on Project 
-
-	And  have a project already 
-	And  have a category already 
-	When Click on edit the category 'newcategory' 
-	And  update the category 
-	Then I will be able to save the update 
-	
-@DeleteCategoryOfProject 
-Scenario: Delete a category on Project 
-
-	And  have a project already 
-	And  have a category updated already 
-	When Click on 'Apagar' category 
-	And  Confirm delete category of project 
-	Then Category will be deleted 
-	
-	
-@DeleteAllTask 
-Scenario: Delete all Tasks 
-
-	And  have a project already 
-	And  click on 'Ver Tarefa' on sidebar 
-	When click on select All tasks 
-	And  select 'Apagar' on dropDown 
-	Then Will delete all tasks
-	
+		@AddCategoryOfProject 
+		Scenario: Add new category on Project 
+		
+			And  have a project already 
+			When I insert the category "newcategory" on field 
+			And  Click on 'Adicionar Categoria' 
+			Then I will be able to see the new category added 
+			
+		@EditCategoryOfProject 
+		Scenario: Edit a category on Project 
+		
+			And  have a project already 
+			And  have a category already 
+			When Click on edit the category 'newcategory' 
+			And  update the category 
+			Then I will be able to save the update 
+			
+		@DeleteCategoryOfProject 
+		Scenario: Delete a category on Project 
+		
+			And  have a project already 
+			And  have a category updated already 
+			When Click on 'Apagar' category 
+			And  Confirm delete category of project 
+			Then Category will be deleted 
+			
+			
+		@DeleteAllTask 
+		Scenario: Delete all Tasks 
+		
+			And  have a project already 
+			And  click on 'Ver Tarefa' on sidebar 
+			When click on select All tasks 
+			And  select 'Apagar' on dropDown 
+			Then Will delete all tasks 
+			
 	
