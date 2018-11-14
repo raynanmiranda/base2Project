@@ -53,7 +53,8 @@ public class ToManageSteps extends ManagePage{
 
 	@Then("^will be created the new Marker$")
 	public void will_be_created_the_new_Marker() throws Throwable {
-	    validateMarkerCreated(markerName);
+	   Thread.sleep(3000);
+		validateMarkerCreated(markerName);
 	}
 	
 	// ------------------- Update Marker -------------------------------------
@@ -84,6 +85,8 @@ public class ToManageSteps extends ManagePage{
 
 	@Then("^Will be updated the Marker$")
 	public void will_be_updated_the_Marker() throws Throwable {
+		clickManageTag();
+		clickManageBookMarksTab();
 		validateMarkerCreated(markerNameUpdated);
 	}
 	

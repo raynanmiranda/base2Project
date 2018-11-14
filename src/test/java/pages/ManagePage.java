@@ -160,7 +160,7 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.NAME, using = "config_set")
 	public WebElement btnCreateMarker;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='table table-striped table-bordered table-condensed table-hover']")
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='table-responsive']")
 	public WebElement validateMarkerCreated;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Atualizar Marcador']")
@@ -420,13 +420,13 @@ public class ManagePage extends PageBase {
 	}
 	
 	public void validateMarkerCreated(String markerName) {
-		assertEquals(markerName, (validateMarkerCreated.findElement(By.xpath("tbody//*[text()='"+markerName+"']")).getText()));
+		assertEquals(markerName, (validateMarkerCreated.findElement(By.xpath("//td//*[text()='"+markerName+"']")).getText()));
 	}
 	
-	public void clickOnMarker(String marker) {
+	public void clickOnMarker(String markerName) {
 		
 		WebElement markerElement;
-		markerElement = validateMarkerCreated.findElement(By.xpath("tbody//*[text()='"+marker+"']"));
+		markerElement = validateMarkerCreated.findElement(By.xpath("//td//*[text()='"+markerName+"']"));
 		markerElement.click();
 		
 	}
