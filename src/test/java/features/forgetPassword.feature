@@ -1,7 +1,7 @@
 Feature: forgetPassword
 
 Background:
-Given I already have access to the Login Page "http://mantis.raynan.base2.com.br/login_page.php"
+Given I already have access to the Login Page "http://localhost/mantis/login_page.php"
 Given I forgot my password
 
 Scenario: Access the Link 'Perdeu a senha?'
@@ -12,7 +12,7 @@ Scenario: Access the Link 'Perdeu a senha?'
 	And Click on the link 'Perdeu a sua senha?'
 	Then will be directed to reset the password
 
-
+@ChangePassword
 Scenario: Change the password
 
 	When I insert a valid user "administrator"

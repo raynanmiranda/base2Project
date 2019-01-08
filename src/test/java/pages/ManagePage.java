@@ -24,7 +24,7 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.ID, using = "project-name")
 	public WebElement nameProjectField;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_proj_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/mantis/manage_proj_page.php']")
 	public WebElement manageProjectTag; // Gerenciar Projetos
 
 	@FindBy(how = How.XPATH, using = "//*[@value='Adicionar projeto']")
@@ -39,7 +39,7 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.ID, using = "project-description")
 	public WebElement txtDescriptionField; // Description(Project)
 
-	@FindBy(how = How.LINK_TEXT, using = "testNewProject") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
+	@FindBy(how = How.LINK_TEXT, using = "testNewProject1") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
 	public WebElement validateProjectCreated; // Description(Project)
 
 	@FindBy(how = How.ID, using = "user-username")
@@ -54,10 +54,10 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.ID, using = "user-access-level")
 	public WebElement accesslevel; // UserName of create new Account(Manager Users)
 
-	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_user_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/mantis/manage_user_page.php']")
 	public WebElement manageUsersTag; // Gerenciar Usuários
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/manage_overview_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/mantis/manage_overview_page.php']")
 	public WebElement manageTag; // Gerenciar Tag
 
 	@FindBy(how = How.XPATH, using = "//*[@id='manage-user-div']//*[text()='Criar nova conta']")
@@ -70,20 +70,29 @@ public class ManagePage extends PageBase {
 	public WebElement validateMgsEmailError;
 
 	@FindBy(how = How.LINK_TEXT, using = "testUser") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
-	public WebElement validateUserCreated;
+	public WebElement validateTestUserCreated;
+	
+	@FindBy(how = How.LINK_TEXT, using = "test1") 
+	public WebElement validateTest1Created;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-success center']//*[@href='manage_user_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-success center']//*[@href='/mantis/manage_user_page.php']")
 	public WebElement btnSucessGeneral;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='navbar-container']//*[@href='bug_report_page.php']")
 	public WebElement btnNewTask;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/mantis/bug_report_page.php']")
 	public WebElement btnNewTaskSideBar;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/view_all_bug_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/mantis/view_all_bug_page.php']")
 	public WebElement btnViewTaskSideBar;
 
+	@FindBy(how = How.ID, using = "select-project-id")
+	public WebElement elementListProject; // projects Selection
+	
+	@FindBy(how = How.ID, using = "category_id")
+	public WebElement categoryType;
+	
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
 
@@ -105,7 +114,7 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@id='buglist']/tbody")
 	public WebElement validateTask; // validate task exist
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='bug_report_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sidebar']//*[@href='/mantis/bug_report_page.php']")
 	public WebElement updateTaskIcon;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@class='lbl padding-6']")
@@ -113,6 +122,9 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@name='action']")
 	public WebElement selectionDropDownActionTask;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@type='submit']")
+	public WebElement btnDeleteAllTasks;
 
 	@FindBy(how = How.XPATH, using = "//*[@value='OK']")
 	public WebElement btnOkActionTask;
@@ -122,6 +134,13 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.ID, using = "proj-category-name")
 	public WebElement updateCategoryField;
+	
+	@FindBy(how = How.ID, using = "dropdown_projects_menu")
+	public WebElement menuSelectProjects;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='projects-list']//*[@class='list dropdown-yellow no-margin']/li")
+	public List<WebElement> selectProject;
+	
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@value='Adicionar Categoria']")
 	public WebElement btnAddCategory;
@@ -138,13 +157,13 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//*[@value='Atualizar Categoria']")
 	public WebElement btnSalveUpdateCategory;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory']")
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']")
 	public WebElement validateNewCategory;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategoryUpdated']")
+	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[text()='newcategory3Updated']")
 	public WebElement validateCategoryUpdated;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/manage_tags_page.php']")
+	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='/mantis/manage_tags_page.php']")
 	public WebElement manageMarkersTab;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='active']//*[text()='Gerenciar Marcadores']")
@@ -193,6 +212,15 @@ public class ManagePage extends PageBase {
 
 	}
 
+	public void fillCategoryProject() {
+		Random number = new Random();
+
+		WebElement ListBoxStatus = categoryType;
+		Select select = new Select(ListBoxStatus);
+		select.selectByIndex(number.nextInt(4));
+
+	}
+	
 	public void fillStatusProject() {
 		Random number = new Random();
 
@@ -257,10 +285,14 @@ public class ManagePage extends PageBase {
 		btnCreateNewUser.click();
 	}
 
-	public void validateUserCreated() {
-		validateUserCreated.getText();
+	public void validateTestUserCreated() {
+		validateTestUserCreated.getText();
 	}
 
+	public void validateTest1Created() {
+		validateTest1Created.getText();
+	}
+	
 	public void clickManageTag() {
 		manageTag.click();
 	}
@@ -273,7 +305,28 @@ public class ManagePage extends PageBase {
 		btnNewTaskSideBar.click();
 
 	}
+	
+	public void selectProject (String projectName) {
+		
+		menuSelectProjects.click();
+		
+		int size = 0;
+		size = selectProject.size();
+		for(int i = 0; i <= size; i++) {
 
+			String text = selectProject.get(i).getText();
+			
+			if(text.equalsIgnoreCase(projectName) ){
+				selectProject.get(i).click();
+				i = size;
+				
+			}
+		}
+	
+	}
+	
+	
+	
 	public void fillFrenquenceStatusTask() {
 		Random number = new Random();
 
@@ -295,7 +348,7 @@ public class ManagePage extends PageBase {
 
 		WebElement ListBoxStatusPriority = priorityStatus;
 		Select select = new Select(ListBoxStatusPriority);
-		select.selectByIndex(number.nextInt(7));
+		select.selectByIndex(number.nextInt(6));
 	}
 
 	public void fillTxtSummaryTask(String summary) {
@@ -312,27 +365,31 @@ public class ManagePage extends PageBase {
 		btnCreateNewTask.click();
 	}
 
-	public String validadeExistTask(String taskResult) {
+	public boolean validadeExistTask(boolean taskResultReturn) {
 
 		String task = "Test new task";
 		int i, size;
 		List<WebElement> ColectTasks = validateTask.findElements(By.xpath("tr//*[@class='column-summary']"));
-
 		size = ColectTasks.size();
 
-		for (i = 0; i < size; i++) {
+		for(i = 0; i <= size; i++) {
 
 			String text = ColectTasks.get(i).getText();
-			if (task == text) {
+			
+			if(text.equalsIgnoreCase(task) ){
+				
 				i = size;
-				taskResult = task;
+				return taskResultReturn = true;
 			}
-
-			taskResult = ColectTasks.get(i).getText();
+			
+			else if(task != text) {
+			taskResultReturn = false;
 			System.out.println(ColectTasks.get(i).getText());
+			}
 		}
 
-		return taskResult;
+
+		return taskResultReturn;
 
 	}
 
@@ -367,6 +424,17 @@ public class ManagePage extends PageBase {
 
 		btnDeleteCategory.click();
 	}
+	
+	public String validNewCategory(String ct) {
+		
+		WebElement category = validateNewCategory.findElement(By.xpath("//*[text()='"+ct+"']"));
+		
+		
+		return category.getText();
+		
+		
+		
+	}
 
 	public void clickBtnConfirmDeleteCategory() {
 
@@ -388,6 +456,7 @@ public class ManagePage extends PageBase {
 		case "delete":
 			WebElement deleteAction = selectionDropDownActionTask.findElement(By.xpath("//*[@value='DELETE']"));
 			deleteAction.click();
+			
 			break;
 		default:
 
@@ -395,6 +464,10 @@ public class ManagePage extends PageBase {
 		}
 	}
 
+	public void clickToDeleteAllTasks() {
+		btnDeleteAllTasks.click();
+	}
+	
 	public void clickManageBookMarksTab() {
 		manageMarkersTab.click();
 

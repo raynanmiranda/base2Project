@@ -1,7 +1,7 @@
 Feature: Login 
 
 Background:
-Given I want to Login on the "http://mantis.raynan.base2.com.br/login_page.php" 
+Given I want to Login on the "http://localhost/mantis/login_page.php" 
 
 @ValidLogin
 Scenario: Sucess Login 

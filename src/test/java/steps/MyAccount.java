@@ -23,7 +23,7 @@ public class MyAccount extends PrincipalPage{
 		// Methods have link with cucumber to execute the scenarios
 		@Given("^I'm already logged in$")
 		public void i_m_already_logged_in() throws Throwable {
-		    principalPage.openPage("http://mantis.raynan.base2.com.br/login_page.php");
+		    principalPage.openPage("http://localhost/mantis/login_page.php");
 		    principalPage.dataLogin();
 		}
 

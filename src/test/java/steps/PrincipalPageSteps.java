@@ -22,7 +22,7 @@ PrincipalPage principalPage = null;
 	
 	@Given("^I'm already logged$")
 	public void i_m_already_logged() {
-	   principalPage.openPage("http://mantis.raynan.base2.com.br/login_page.php");
+	   principalPage.openPage("http://localhost/mantis/login_page.php");
 	   principalPage.dataLogin();
 	}
 

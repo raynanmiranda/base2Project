@@ -25,10 +25,8 @@ Scenario: Update the existing Marker
 
 	And  I click on the 'Gerenciar' sidebar 
 	And  Click on the 'Gerenciar Marcadores' tab 
-	And  I Fill up the name "testMarker" 
-	And  Fill up the description "testMakerDescription" 
-	And  I click on 'Criar Marcador' 
-	When I click on marker created 
+	And  I Fill up the name "testMarker2" 
+	When I click on marker created "testMarker2"
 	And  I click on update Marker 
 	And  Change the marker information 
 	And  I click on update marker button 
@@ -38,11 +36,8 @@ Scenario: Update the existing Marker
 Scenario: Delete the existing Marker 
 
 	And  I click on the 'Gerenciar' sidebar 
-	And  Click on the 'Gerenciar Marcadores' tab 
-	And  I Fill up the name "testMarker" 
-	And  Fill up the description "testMakerDescription" 
-	And  I click on 'Criar Marcador' 
-	When I click on marker created 
+	And  Click on the 'Gerenciar Marcadores' tab  
+	When I click on marker created "testMarker3"
 	And  I click on delete marker 
 	And  I click on confirm delete Marker 
 	Then Will be deleted the Marker

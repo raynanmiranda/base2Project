@@ -58,8 +58,9 @@ public class ToManageSteps extends ManagePage {
 
 	// ------------------- Update Marker -------------------------------------
 
-	@When("^I click on marker created$")
-	public void i_click_on_marker_created() throws Throwable {
+	@When("^I click on marker created \"([^\"]*)\"$")
+	public void i_click_on_marker_created(String name) throws Throwable {
+		markerName = name;
 		clickOnMarker(markerName);
 		validateMarkerAccessedSucessfuly(markerName);
 	}
