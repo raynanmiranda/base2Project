@@ -24,16 +24,17 @@ import org.openqa.selenium.TakesScreenshot;
 import com.vimalselvam.cucumber.listener.Reporter;
 
 import cucumber.api.Scenario;
+import utils.ConnectMySQL;
 
 public class HookSteps {
-
+    
 	public ExtentHtmlReporter htmlextent = null;
 	public static ExtentReports report;
 	public static ExtentTest log = null;
 
 	@Before
 	public void setUp() throws MalformedURLException {
-
+		
 		DriverFactory.initializeDriver();
 
 		// Initialize Reports

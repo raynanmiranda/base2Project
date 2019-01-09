@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.SQLException;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -13,9 +15,12 @@ import cucumber.api.java.en.When;
 import junit.framework.Assert;
 import pages.ManagePage;
 import pages.PrincipalPage;
+import utils.ConnectMySQL;
 
 public class ProjectSteps extends ManagePage {
-
+	
+	ConnectMySQL connection = new ConnectMySQL();
+	
 	ManagePage managePage = null;
 	PrincipalPage principalPage = null;
 
@@ -322,8 +327,11 @@ public class ProjectSteps extends ManagePage {
 	}
 	
 	@Then("^Will delete all tasks$")
-	public void will_delete_all_tasks() throws InterruptedException {
-		
+	public void will_delete_all_tasks() throws InterruptedException, SQLException {
+		String result = null;
+		connection.getConnection();
+		result = connection.getDataOfTask("SELECT * FROM mantis_bug_table",result);
+		assertEquals("0",result);
 		Thread.sleep(5000);
 	}
 	

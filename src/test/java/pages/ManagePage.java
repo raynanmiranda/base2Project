@@ -125,6 +125,9 @@ public class ManagePage extends PageBase {
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@type='submit']")
 	public WebElement btnDeleteAllTasks;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='action-group-div']//*[@type='submit']")
+	public WebElement btnConfirmDeleteTasks;
 
 	@FindBy(how = How.XPATH, using = "//*[@value='OK']")
 	public WebElement btnOkActionTask;
@@ -466,7 +469,9 @@ public class ManagePage extends PageBase {
 
 	public void clickToDeleteAllTasks() {
 		btnDeleteAllTasks.click();
+		btnConfirmDeleteTasks.click();
 	}
+	
 	
 	public void clickManageBookMarksTab() {
 		manageMarkersTab.click();
