@@ -19,7 +19,7 @@ import utils.ConnectMySQL;
 				  // plugin = {"pretty","html:target/cucumber-report" },    
 				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"},    
 				 glue = {"steps","hook"},
-				 tags = {"@DeleteAllTask"} 
+				 tags = {"@EditTask"} 
 				     
 				)
 
@@ -36,6 +36,6 @@ public class ExecuteProjectsTest {
 		Reporter.setSystemInfo("user", System.getProperty("user.name"));
 		Reporter.setSystemInfo("os", "Windows 10");
 		Reporter.setTestRunnerOutput("test runner output message Project");
-		ConnectMySQL.closeConnection();
+		
 	}
 }

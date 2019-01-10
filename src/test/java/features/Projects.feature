@@ -50,14 +50,16 @@ Scenario: Create New Task by SideBar
 	And  Click on 'Criar Nova Tarefa' button 
 	Then Will have a task created 
 
-#@EditTask
-#Scenario: Edit Task 
-#
-#	And  have a project already 
-#	When click on 'Criar Tarefa' on SideBar 
-#	And  Fill up all form with valid data 
-#	And  Click on 'Criar Nova Tarefa' button 
-#	Then Will have a task created 
+@EditTask
+Scenario: Edit Task 
+
+	And  have a project already 
+	And  click on 'Ver Tarefa' on SideBar 
+	And  Already have a task
+	When Click on the pencil icon 
+	And  update the Task
+	And  Save the new information 
+	Then Will have a task updated 
 	
 @ValidateEmailsOfUser 
 Scenario Outline: Using Different e-mails 
@@ -112,7 +114,7 @@ Scenario: Delete a category on Project
 Scenario: Delete all Tasks 
 
 	And  have a project already 
-	And  click on 'Ver Tarefa' on sidebar 
+	And  click on 'Ver Tarefa' on SideBar 
 	When click on select All tasks 
 	And  select 'Apagar' on dropDown 
 	Then Will delete all tasks 

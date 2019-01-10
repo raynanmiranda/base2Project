@@ -30,14 +30,16 @@ public class ProjectSteps extends ManagePage {
 	}
     
 	private String checkNewName = "testNewProject";
-	private String checkName = "testNewProject1";
+	private String checkName = " testNewProject1 ";
 	protected String textTask = "Test new task";
 	public String checkUser;
 
 	private String fieldUserName = "testUser";
 	private String fieldRealName = "testRealUser";
 	private String fieldEmail = "teste1@teste1.com";
-
+	
+	private String severityStatusName = "grande";
+	private String priorityStatusName = "alta";
 	
 
 	@When("^I click on the 'Convidar Usuarios' button$")
@@ -63,8 +65,8 @@ public class ProjectSteps extends ManagePage {
 	@When("^I fill up the valid data form$")
 	public void i_fill_up_the_valid_data() throws Throwable {
 		managePage.insertNameProjectField(checkNewName);
-		managePage.fillStatusProject();
-		managePage.fillVisibleProject();
+		managePage.fillStatusProjectRandomic();
+		managePage.fillVisibleProjectRandomic();
 		managePage.txtDescriptionField("Description project test");
 	}
 
@@ -180,9 +182,9 @@ public class ProjectSteps extends ManagePage {
 	@And("^Fill up all form with valid data$")
 	public void fill_up_all_form_with_valid_data() {
 		managePage.fillCategoryProject();
-		managePage.fillFrenquenceStatusTask();
-		managePage.fillSeverityStatusTask();
-		managePage.fillPriorityStatusTask();
+		managePage.fillFrenquenceStatusTaskRandomic();
+		managePage.fillSeverityStatusTaskRandomic();
+		managePage.fillPriorityStatusTaskRandomic();
 		managePage.fillTxtSummaryTask(textTask);
 		managePage.fillTxtDescriptionTask("writing description of new task");
 	}
@@ -206,34 +208,61 @@ public class ProjectSteps extends ManagePage {
 	
 	@And("^click on 'Ver Tarefa' on SideBar$")
 	public void click_on_Ver_Tarefa_on_SideBar() throws Throwable {
-	    
+		clickBtnViewTaskSideBar();
 	}
 
 	@And("^Already have a task$")
 	public void already_have_a_task() throws Throwable {
-	   
+		Boolean taskResult = false;
+		assertTrue(managePage.validadeExistTask(taskResult));
 	}
 
 	@When("^Click on the pencil icon$")
 	public void click_on_the_pencil_icon() throws Throwable {
-	   
+		clickPencilUpdateTask(textTask);
 	}
 
 	@When("^update the Task$")
 	public void update_the_Task() throws Throwable {
-	    
+		getPriorityStatus(priorityStatusName);
+		getSeverityStatus(severityStatusName);
+		insertTextAreaStepToReproduce("Updating Text Area of Task");
 	}
 
 	@When("^Save the new information$")
 	public void save_the_new_information() throws Throwable {
-	   
+		clickOnbtnUpdateEditTask();
 	}
 
 	@Then("^Will have a task updated$")
 	public void will_have_a_task_updated() throws Throwable {
-	  
+		assertTrue(validateDataUpdateTask(severityStatusName,priorityStatusName));
+		assertEquals("Updating Text Area of Task", elementValidateStepsOnTaskEdited().getText());
 	}
 
+	//-----------------------------Delete all Tasks -----------------------------------
+	
+	
+		@When("^click on select All tasks$")
+		public void click_on_select_all_tasks() {
+			managePage.clickCheckSelectAllTasks();
+		}
+		
+		@And("^select 'Apagar' on dropDown$")
+		public void select_apagar_on_dropDown() {
+			selectActionsTask("DELETE");
+			clickToDeleteAllTasks();
+		}
+		
+		@Then("^Will delete all tasks$")
+		public void will_delete_all_tasks() throws InterruptedException, SQLException {
+			String result = null;
+			connection.getConnection();
+			result = connection.getDataOfTask("SELECT * FROM mantis_bug_table",result);
+			assertEquals("0",result);
+			ConnectMySQL.closeConnection();
+			Thread.sleep(5000);
+		}
 	
 	//--------------Add Category of Project ---------------
 	
@@ -308,31 +337,6 @@ public class ProjectSteps extends ManagePage {
 		
 	}
 	
-	//-----------------------------Delete all Tasks -----------------------------------
 	
-	@And("^click on 'Ver Tarefa' on sidebar$")
-	public void click_on_ver_tarefa_on_sidebar() {
-		managePage.clickBtnViewTaskSideBar();
-	}
-	
-	@When("^click on select All tasks$")
-	public void click_on_select_all_tasks() {
-		managePage.clickCheckSelectAllTasks();
-	}
-	
-	@And("^select 'Apagar' on dropDown$")
-	public void select_apagar_on_dropDown() {
-		selectActionsTask("DELETE");
-		clickToDeleteAllTasks();
-	}
-	
-	@Then("^Will delete all tasks$")
-	public void will_delete_all_tasks() throws InterruptedException, SQLException {
-		String result = null;
-		connection.getConnection();
-		result = connection.getDataOfTask("SELECT * FROM mantis_bug_table",result);
-		assertEquals("0",result);
-		Thread.sleep(5000);
-	}
 	
 }

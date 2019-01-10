@@ -71,8 +71,8 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.LINK_TEXT, using = "testUser") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
 	public WebElement validateTestUserCreated;
-	
-	@FindBy(how = How.LINK_TEXT, using = "test1") 
+
+	@FindBy(how = How.LINK_TEXT, using = "test1")
 	public WebElement validateTest1Created;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='alert alert-success center']//*[@href='/mantis/manage_user_page.php']")
@@ -89,10 +89,10 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.ID, using = "select-project-id")
 	public WebElement elementListProject; // projects Selection
-	
+
 	@FindBy(how = How.ID, using = "category_id")
 	public WebElement categoryType;
-	
+
 	@FindBy(how = How.ID, using = "reproducibility")
 	public WebElement frequenceStatus; // estado(Frequence)
 
@@ -122,10 +122,10 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@name='action']")
 	public WebElement selectionDropDownActionTask;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@type='submit']")
 	public WebElement btnDeleteAllTasks;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='action-group-div']//*[@type='submit']")
 	public WebElement btnConfirmDeleteTasks;
 
@@ -137,13 +137,12 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.ID, using = "proj-category-name")
 	public WebElement updateCategoryField;
-	
+
 	@FindBy(how = How.ID, using = "dropdown_projects_menu")
 	public WebElement menuSelectProjects;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='projects-list']//*[@class='list dropdown-yellow no-margin']/li")
 	public List<WebElement> selectProject;
-	
 
 	@FindBy(how = How.XPATH, using = "//*[@id='categories']//*[@value='Adicionar Categoria']")
 	public WebElement btnAddCategory;
@@ -186,13 +185,37 @@ public class ManagePage extends PageBase {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Atualizar Marcador']")
 	public WebElement btnUpdateMarker;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='update_bug_form']//*[@type='submit']")
+	private WebElement btnUpdateEditTask;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='widget-title lighter']")
 	public WebElement validateAccessMarker;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@class='btn btn-primary btn-white btn-round' and @value='Apagar Marcador']")
 	public WebElement btnDeleteMarker;
+	
+	@FindBy(how = How.ID, using = "steps_to_reproduce")
+	private WebElement textAreaStepToReproduce;
+	
+	@FindBy(how = How.XPATH, using = "//td[contains(@class,'severity') and text()='grande']")
+	public WebElement validateSeverityOnTaskEdited;
 
+	private WebElement btnPencilEditTask(String taskName) {
+		return driver.findElement(By.xpath("//td[contains(@class,'summary') and text()='" + taskName
+				+ "']/parent::tr/td[contains(@class,'edit')]/a"));
+	}
+	
+	private WebElement elementValidateSeverityOnTaskEdited(String severityName) {
+		
+		return driver.findElement(By.xpath("//td[contains(@class,'severity') and text()='"+severityName+"']"));
+	}
+	
+	public WebElement elementValidateStepsOnTaskEdited(){
+	
+		return driver.findElement(By.xpath("//td[contains(@class,'bug-steps-to-reproduce')]"));
+
+	}
 	public void btnSucessGeneral() {
 		btnSucessGeneral.click();
 	}
@@ -223,8 +246,8 @@ public class ManagePage extends PageBase {
 		select.selectByIndex(number.nextInt(4));
 
 	}
-	
-	public void fillStatusProject() {
+
+	public void fillStatusProjectRandomic() {
 		Random number = new Random();
 
 		WebElement ListBoxStatus = statusProject;
@@ -233,7 +256,7 @@ public class ManagePage extends PageBase {
 
 	}
 
-	public void fillVisibleProject() {
+	public void fillVisibleProjectRandomic() {
 		Random number = new Random();
 
 		WebElement ListBoxVisibility = visibleProject;
@@ -295,7 +318,7 @@ public class ManagePage extends PageBase {
 	public void validateTest1Created() {
 		validateTest1Created.getText();
 	}
-	
+
 	public void clickManageTag() {
 		manageTag.click();
 	}
@@ -308,29 +331,27 @@ public class ManagePage extends PageBase {
 		btnNewTaskSideBar.click();
 
 	}
-	
-	public void selectProject (String projectName) {
-		
+
+	public void selectProject(String projectName) {
+
 		menuSelectProjects.click();
-		
+
 		int size = 0;
 		size = selectProject.size();
-		for(int i = 0; i <= size; i++) {
+		for (int i = 0; i <= size; i++) {
 
 			String text = selectProject.get(i).getText();
-			
-			if(text.equalsIgnoreCase(projectName) ){
+
+			if (text.equalsIgnoreCase(projectName)) {
 				selectProject.get(i).click();
 				i = size;
-				
+
 			}
 		}
-	
+
 	}
-	
-	
-	
-	public void fillFrenquenceStatusTask() {
+
+	public void fillFrenquenceStatusTaskRandomic() {
 		Random number = new Random();
 
 		WebElement ListBoxStatusFrequence = frequenceStatus;
@@ -338,7 +359,7 @@ public class ManagePage extends PageBase {
 		select.selectByIndex(number.nextInt(5));
 	}
 
-	public void fillSeverityStatusTask() {
+	public void fillSeverityStatusTaskRandomic() {
 		Random number = new Random();
 
 		WebElement ListBoxStatusSeverity = severityStatus;
@@ -346,7 +367,7 @@ public class ManagePage extends PageBase {
 		select.selectByIndex(number.nextInt(7));
 	}
 
-	public void fillPriorityStatusTask() {
+	public void fillPriorityStatusTaskRandomic() {
 		Random number = new Random();
 
 		WebElement ListBoxStatusPriority = priorityStatus;
@@ -368,6 +389,60 @@ public class ManagePage extends PageBase {
 		btnCreateNewTask.click();
 	}
 
+	public void clickPencilUpdateTask(String taskName) {
+
+		javaScriptExecutor().executeScript("arguments[0].click();", btnPencilEditTask(taskName));
+		//btnPencilEditTask(taskName).click();
+
+	}
+	
+public void getPriorityStatus(String priorityStatusName) {
+		
+		Select select = new Select(priorityStatus);
+		select.selectByVisibleText(priorityStatusName);
+		
+		
+	}
+	
+	public void getSeverityStatus(String severityStatusName) {
+		
+		Select select = new Select(severityStatus);
+		select.selectByVisibleText(severityStatusName);
+		
+		
+	}
+	
+	public void insertTextAreaStepToReproduce(String insertText) {
+		textAreaStepToReproduce.clear();
+		textAreaStepToReproduce.sendKeys(insertText);
+	}
+	
+	public void clickOnbtnUpdateEditTask() {
+		
+		javaScriptExecutor().executeScript("arguments[0].click();",btnUpdateEditTask);
+	}
+	
+	public boolean validateDataUpdateTask(String severityStatus, String priorityStatus) {
+		
+		boolean  validation;
+		String severityName = elementValidateSeverityOnTaskEdited(severityStatus).getText();
+		String priorityName = elementValidateSeverityOnTaskEdited(priorityStatus).getText();
+		
+		if(severityStatus.equalsIgnoreCase(severityName) && severityStatus.equalsIgnoreCase(priorityName)) {
+		
+			validation = true;
+		}
+		else {
+			validation = false;
+		}
+		return validation;
+		
+	}
+	
+	public void validateTextStepsOnTaxk(){
+		elementValidateStepsOnTaskEdited();
+	}
+
 	public boolean validadeExistTask(boolean taskResultReturn) {
 
 		String task = "Test new task";
@@ -375,22 +450,21 @@ public class ManagePage extends PageBase {
 		List<WebElement> ColectTasks = validateTask.findElements(By.xpath("tr//*[@class='column-summary']"));
 		size = ColectTasks.size();
 
-		for(i = 0; i <= size; i++) {
+		for (i = 0; i <= size; i++) {
 
 			String text = ColectTasks.get(i).getText();
-			
-			if(text.equalsIgnoreCase(task) ){
-				
+
+			if (text.equalsIgnoreCase(task)) {
+
 				i = size;
 				return taskResultReturn = true;
 			}
-			
-			else if(task != text) {
-			taskResultReturn = false;
-			System.out.println(ColectTasks.get(i).getText());
+
+			else if (task != text) {
+				taskResultReturn = false;
+				System.out.println(ColectTasks.get(i).getText());
 			}
 		}
-
 
 		return taskResultReturn;
 
@@ -427,16 +501,13 @@ public class ManagePage extends PageBase {
 
 		btnDeleteCategory.click();
 	}
-	
+
 	public String validNewCategory(String ct) {
-		
-		WebElement category = validateNewCategory.findElement(By.xpath("//*[text()='"+ct+"']"));
-		
-		
+
+		WebElement category = validateNewCategory.findElement(By.xpath("//*[text()='" + ct + "']"));
+
 		return category.getText();
-		
-		
-		
+
 	}
 
 	public void clickBtnConfirmDeleteCategory() {
@@ -459,7 +530,7 @@ public class ManagePage extends PageBase {
 		case "delete":
 			WebElement deleteAction = selectionDropDownActionTask.findElement(By.xpath("//*[@value='DELETE']"));
 			deleteAction.click();
-			
+
 			break;
 		default:
 
@@ -471,8 +542,7 @@ public class ManagePage extends PageBase {
 		btnDeleteAllTasks.click();
 		btnConfirmDeleteTasks.click();
 	}
-	
-	
+
 	public void clickManageBookMarksTab() {
 		manageMarkersTab.click();
 
