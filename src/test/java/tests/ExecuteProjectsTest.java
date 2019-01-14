@@ -18,8 +18,8 @@ import utils.ConnectMySQL;
 				 features = {"src/test/java/features/Projects.feature"}, 
 				  // plugin = {"pretty","html:target/cucumber-report" },    
 				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"},    
-				 glue = {"steps","hook"},
-				 tags = {"@EditTask"} 
+				 glue = {"steps","hook"}
+				 //tags = {"@EditTask"} 
 				     
 				)
 

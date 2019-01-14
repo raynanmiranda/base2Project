@@ -53,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 10, 2019 04:16:31 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 11, 2019 09:39:13 AM</span>
 				</a>
 			</li>
 			<li>
@@ -78,7 +78,7 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+											<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -91,7 +91,7 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@EditTask</a></li>
+					<li><a href='#'>@ValidLogin</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -139,10 +139,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -154,10 +154,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
 				</div>
 			</div>
 		</div>
@@ -169,10 +169,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>5</span> others
 				</div>
 			</div>
 		</div>
@@ -186,85 +186,61 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Projects</span>
-						<span class='test-time'>Jan 10, 2019 04:16:31 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>Login</span>
+						<span class='test-time'>Jan 11, 2019 09:39:13 AM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario node' test-id='2' status='skip'>
 	<div class='category-list'>
-		<span class='category label white-text'>@EditTask</span>
+		<span class='category label white-text'>@ValidLogin</span>
 	</div>
-	<span class='duration right label'>0h 1m 3s+302ms</span>
+	<span class='duration right label'>0h 5m 58s+283ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Edit Task</span>
+		<span class="desc-text">Sucess Login</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node given pass' status='pass'>
+		<li test-id='3' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given I'm already logged in</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Given I want to Login on the "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='4' class='node and pass' status='pass'>
-			
-			<b>And</b>
-			
-			<span class="bdd-step-name">And have a project already</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='5' class='node and pass' status='pass'>
-			
-			<b>And</b>
-			
-			<span class="bdd-step-name">And click on 'Ver Tarefa' on SideBar</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='6' class='node and pass' status='pass'>
-			
-			<b>And</b>
-			
-			<span class="bdd-step-name">And Already have a task</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='7' class='node when pass' status='pass'>
+		<li test-id='4' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Click on the pencil icon</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">When I Insert the user "administrator"</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='8' class='node and pass' status='pass'>
+		<li test-id='5' class='node and skip' status='skip'>
 			
 			<b>And</b>
 			
-			<span class="bdd-step-name">And update the Task</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='9' class='node and pass' status='pass'>
+		<li test-id='6' class='node and skip' status='skip'>
 			
 			<b>And</b>
 			
-			<span class="bdd-step-name">And Save the new information</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">And Insert the password "29092017"</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='10' class='node then pass' status='pass'>
+		<li test-id='7' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Will have a task updated</span>
-				<div class='pre'>passed</div>
+			<span class="bdd-step-name">Then I will login with sucess</span>
+				<div class='pre'>skipped</div>
 			
 		</li>
 	</ul>
@@ -323,16 +299,16 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@EditTask</span>
+						<span class='category-name'>@ValidLogin</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -346,9 +322,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 10, 2019 04:16:31 PM</td>
-										<td class='linked' test-id='2'>Projects.Edit Task</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>Jan 11, 2019 09:39:13 AM</td>
+										<td class='linked' test-id='2'>Login.Sucess Login</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -388,25 +364,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 10, 2019 04:16:31 PM</div>
+					<div class='panel-lead'>Jan 11, 2019 09:39:13 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 10, 2019 04:17:37 PM</div>
+			 		<div class='panel-lead'>Jan 11, 2019 09:45:13 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 6s+327ms</div>
+					<div class='panel-lead'>0h 6m 0s+159ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -442,12 +418,12 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@EditTask</td>
+							<td>@ValidLogin</td>
+							<td>0</td>
+							<td>0</td>
 							<td>1</td>
-							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -472,31 +448,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 0,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
+				skipParent: 1,
+				exceptionsParent: 1,
 				
-				passChild: 1,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 1,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 8,
+				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 5,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 5,
 			};
 		</script>
 		

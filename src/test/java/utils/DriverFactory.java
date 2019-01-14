@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 
@@ -37,6 +39,13 @@ public class DriverFactory {
 					INSTANCE = new RemoteWebDriver(new URL(Configuration.REMOTE_URL), optionFireFox);
 					INSTANCE.manage().window().maximize();
 					break;
+				case "IE":
+					InternetExplorerOptions optionIE = new InternetExplorerOptions();
+					optionIE.setCapability("intl.accept_languages", "pt-br");
+					optionIE.setCapability("dom.popup_maximum", 0);
+					INSTANCE = new RemoteWebDriver(new URL(Configuration.REMOTE_URL), optionIE);
+					INSTANCE.manage().window().maximize();
+					break;
 					
 				default:
 					throw new java.lang.Error("Browser informado não é suportado");
@@ -46,7 +55,7 @@ public class DriverFactory {
 			}
 			else {
 			
-			switch (browser.toLowerCase()) {
+			switch(browser.toLowerCase()) {
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", Configuration.PATH_CHROME);
 				INSTANCE = new ChromeDriver();
@@ -55,6 +64,11 @@ public class DriverFactory {
 			case "firefox":
 				//System.setProperty("webdriver.gecko.driver", "E:\\browserDrivers\\geckodriver.exe");
 				INSTANCE = new FirefoxDriver();
+				INSTANCE.manage().window().maximize();
+				break;
+			case "ie":
+				System.setProperty("webdriver.ie.driver", Configuration.PATH_IE);
+				INSTANCE = new InternetExplorerDriver();
 				INSTANCE.manage().window().maximize();
 				break;
 			default:
