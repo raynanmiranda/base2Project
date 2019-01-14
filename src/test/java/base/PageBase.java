@@ -1,5 +1,6 @@
 package base;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,12 +15,23 @@ public class PageBase {
 	public PageBase() {
 		PageFactory.initElements(DriverFactory.getInstance(), this);
 		this.driver = DriverFactory.getInstance();
-		wait = new WebDriverWait(DriverFactory.getInstance(), 30);		
-	}
+		wait = new WebDriverWait(DriverFactory.getInstance(), 30);
+		
+		
+		}
 	
 	public void navegateTo(String url) {
 		driver.navigate().to(url);
 		
+		}
+	
+	public JavascriptExecutor javaScriptExecutor() {
+	
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		return jse;
+		
+	
+	
 	}
 
 	

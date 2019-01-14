@@ -39,6 +39,9 @@ public class LoginPage extends PageBase{
 		@FindBy(how = How.XPATH, using = "//*[@value='Enviar']")
 		public WebElement btnSendNewPassword;
 		
+		@FindBy(how = How.XPATH, using = "//*[@id='main-container']//*[@href='login_page.php']")
+		public WebElement btnContinueToLoginPage;
+		
 		@FindBy(how = How.XPATH, using = "//*[@id='login-box']/div/div[1]/h4")
 		public WebElement validateLoginPage;
 		
@@ -82,5 +85,8 @@ public class LoginPage extends PageBase{
 			btnSendNewPassword.click();
 		}
 
+		public void clickBtnBackLoginPage() {
+			btnContinueToLoginPage.click();
+		}
 	
 }

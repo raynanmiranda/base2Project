@@ -15,8 +15,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = "src/test/java/features/Login.feature", 
 				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"},    
-				 glue = {"steps","hook"}
-				 //tags = {"@ValidLogin"}
+				 glue = {"steps","hook"},
+				 tags = {"@ValidLogin"}
 				     
 				)
 		

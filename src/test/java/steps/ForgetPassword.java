@@ -73,7 +73,8 @@ public class ForgetPassword extends LoginPage{
 
 		@Then("^will return to loginPage$")
 		public void will_return_to_loginPage() {
-		    assertEquals(validLoginPage,loginPg.validateLoginPage.getText());
+		    loginPg.clickBtnBackLoginPage();
+			assertEquals(validLoginPage,loginPg.validateLoginPage.getText());
 		    
 		}
 		

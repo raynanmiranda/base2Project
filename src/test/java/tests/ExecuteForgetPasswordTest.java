@@ -13,8 +13,10 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 				 features = "src/test/java/features/ForgetPassword.feature", 
-				     glue = {"steps","hook"},
-				     plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"}
+				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-Report/reportBase2Project.html"},    
+				 glue = {"steps","hook"}
+				 //tags = {"@ChangePassword"}
+				     
 				     
 				)
 
