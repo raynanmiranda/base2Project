@@ -1,0 +1,4162 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+			
+      
+        
+      
+    
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>BancoInterTestsReport</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Mar 24, 2019 04:15:25 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@ChangePassword</a></li>
+					<li><a href='#'>@ValidLogin</a></li>
+					<li><a href='#'>@InvalidLogin</a></li>
+					<li><a href='#'>@PreferencesTag</a></li>
+					<li><a href='#'>@ColunsTag</a></li>
+					<li><a href='#'>@PerfilsTag</a></li>
+					<li><a href='#'>@TokenAPITag</a></li>
+					<li><a href='#'>@test</a></li>
+					<li><a href='#'>@EntryOfManageProject</a></li>
+					<li><a href='#'>@CreateNewProject</a></li>
+					<li><a href='#'>@CreateNewUserOnManageUsers</a></li>
+					<li><a href='#'>@CreateNewTask</a></li>
+					<li><a href='#'>@CreateNewTaskBySideBar</a></li>
+					<li><a href='#'>@EditTask</a></li>
+					<li><a href='#'>@ValidateEmailsOfUser</a></li>
+					<li><a href='#'>@AddCategoryOfProject</a></li>
+					<li><a href='#'>@EditCategoryOfProject</a></li>
+					<li><a href='#'>@DeleteCategoryOfProject</a></li>
+					<li><a href='#'>@DeleteAllTask</a></li>
+					<li><a href='#'>@AcessManageMarkers</a></li>
+					<li><a href='#'>@CreateNewMarker</a></li>
+					<li><a href='#'>@UpdateMarker</a></li>
+					<li><a href='#'>@DeleteMarker</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='57.143%'><span class='strong'>4</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='28.571%'>2</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='14.286%'>1</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='79.487%'><span class='strong'>31</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='17.949%'>7</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='2.564%'>1</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='89.3%'><span class='strong'>217</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='2.881%'>7</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='7.819%'>19</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>CreateAccount</span>
+						<span class='test-time'>Mar 24, 2019 04:15:25 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='skip'>
+	<span class='duration right label'>0h 0m 7s+10ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the account link</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I already have access Login Page "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='4' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on the 'criar uma nova conta'</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='5' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will be directed to signup Page</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>forgetPassword</span>
+						<span class='test-time'>Mar 24, 2019 04:15:34 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='7' status='pass'>
+	<span class='duration right label'>0h 0m 14s+993ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Link 'Perdeu a senha?'</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='8' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I already have access to the Login Page "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I forgot my password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert a valid user "administrator"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='11' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the loginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='12' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the link 'Perdeu a sua senha?'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='13' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will be directed to reset the password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='14' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@ChangePassword</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+584ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Change the password</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='15' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I already have access to the Login Page "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I forgot my password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert a valid user "administrator"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the loginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='19' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the link 'Perdeu a sua senha?'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='20' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert the valid e-mail "raynan.miranda@base2.com.br"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on the Send button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='22' class='node then fail' status='fail'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will return to loginPage</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Change_the_password.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='main-container']//*[@href='login_page.php']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57797}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 9286da2d2b2bb3f25473913242d47ad9
+*** Element info: {Using=xpath, value=//*[@id='main-container']//*[@href='login_page.php']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pages.LoginPage.clickBtnBackLoginPage(LoginPage.java:89)
+	at steps.ForgetPassword.will_return_to_loginPage(ForgetPassword.java:76)
+	at ?.Then will return to loginPage(src/test/java/features/ForgetPassword.feature:23)
+</pre></div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='23' status='pass'>
+	<span class='duration right label'>0h 0m 11s+217ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Invalid username_Change the password</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='24' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I already have access to the Login Page "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I forgot my password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert a invalid user "raynmiranda"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the loginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the link 'Perdeu a sua senha?'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='29' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert the valid e-mail "raynan.miranda@base2.com.br"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='30' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on the Send button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='31' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will show a message erro</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>Login</span>
+						<span class='test-time'>Mar 24, 2019 04:16:18 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='33' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@ValidLogin</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+338ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Sucess Login</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='34' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I want to Login on the "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='35' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I Insert the user "administrator"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='36' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='37' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Insert the password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='38' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I will login with sucess</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='39' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@InvalidLogin</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+328ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">failed Login - invalid user</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='40' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I want to Login on the "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='41' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I Insert the invalid user "raynanmiranda"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='42' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='43' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Insert the password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='44' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='45' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I will not login with sucess</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='46' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@InvalidLogin</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+883ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">failed Login - invalid password</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='47' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I want to Login on the "http://localhost/mantis/login_page.php"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='48' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I Insert the user "administrator"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='49' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='50' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Insert the invalid password "092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='51' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on LoginButton</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='52' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I will not login with sucess</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>My Account</span>
+						<span class='test-time'>Mar 24, 2019 04:16:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='54' status='pass'>
+	<span class='duration right label'>0h 0m 12s+546ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">fill in the form on the myAccount with new Password</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='55' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='56' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='57' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='58' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When fill in the old password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='59' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in the new password "20170929"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='60' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And confirm the new password "20170929"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='61' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on 'Atualizar Usuario'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='62' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will salve my new password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='63' status='pass'>
+	<span class='duration right label'>0h 0m 12s+703ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Change the name and E-mail on MyAccount form</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='64' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='65' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='66' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='67' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When fill in the old password "20170929"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='68' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in the new password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='69' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And confirm the new password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='70' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in a new e-mail "raynan.miranda@base2.com"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='71' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in a new name "Raynann Miranda"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='72' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on 'Atualizar Usuario'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='73' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will save with sucess</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='74' status='pass'>
+	<span class='duration right label'>0h 0m 16s+103ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Change the name and E-mail Again on MyAccount form</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='75' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='76' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='77' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='78' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When fill in the old password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='79' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in the new password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='80' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And confirm the new password "29092017"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='81' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in a new e-mail "raynan.miranda@base2.com.br"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='82' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And fill in a new name "Raynan Miranda"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='83' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on 'Atualizar Usuario'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='84' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will save with sucess</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='85' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@PreferencesTag</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+780ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Preferences Tag</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='86' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='87' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='88' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='89' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on the 'Preferencias' tag</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='90' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the preferences itens</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='91' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@ColunsTag</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+397ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Manage coluns Tag</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='92' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='93' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='94' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='95' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on the 'Gerenciar colunas' tag</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='96' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the manageColuns itens</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='97' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@PerfilsTag</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+403ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Perfils Tag</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='98' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='99' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='100' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='101' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on the 'Perfils' tag</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='102' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the perfils itens</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='103' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@TokenAPITag</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+547ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the TokenAPI Tag</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='104' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='105' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='106' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='107' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on the 'TokenAPI' tag</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='108' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the TokenAPI itens</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='109'>
+					<div class='test-heading'>
+						<span class='test-name'>principalMantisPage</span>
+						<span class='test-time'>Mar 24, 2019 04:18:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='110' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@test</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+273ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access myAccount</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='111' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='112' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Access the menuAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='113' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on MyAccount</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='114' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will access my account Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='115' status='pass'>
+	<span class='duration right label'>0h 0m 9s+566ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the ver Tarefas Tab</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='116' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='117' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on Ver Tarefas</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='118' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the Ver Tarefas page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='119' status='pass'>
+	<span class='duration right label'>0h 0m 9s+345ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Resumo Tab</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='120' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='121' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on Resumo</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='122' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the Resumo page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='123' status='pass'>
+	<span class='duration right label'>0h 0m 8s+968ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Gerenciar tab</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='124' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='125' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on Gerenciar tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='126' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the Gerenciar page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='127' status='pass'>
+	<span class='duration right label'>0h 0m 9s+389ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Registro de Mudancas</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='128' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='129' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on Registro de mudancas</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='130' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the Registro de mudancas page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='131' status='pass'>
+	<span class='duration right label'>0h 0m 8s+325ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the Planejamento</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='132' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='133' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on Planejamento</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='134' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will access the Planejamento page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='135'>
+					<div class='test-heading'>
+						<span class='test-name'>Projects</span>
+						<span class='test-time'>Mar 24, 2019 04:19:42 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='136' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@EntryOfManageProject</span>
+	</div>
+	<span class='duration right label'>0h 0m 9s+708ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify the possibility to go to 'Gerenciar Projetos' tab</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='137' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='138' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on the 'Convidar Usuarios' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='139' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on the 'Gerenciar projetos' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='140' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will be able to manage and create projects</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='141' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CreateNewProject</span>
+	</div>
+	<span class='duration right label'>0h 0m 15s+149ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Create a New Project</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='142' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='143' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='144' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on the 'Gerenciar projetos' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='145' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Criar Novo Projeto' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='146' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I fill up the valid data form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='147' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Adicionar projeto' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='148' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will create the Project</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='149' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CreateNewUserOnManageUsers</span>
+	</div>
+	<span class='duration right label'>0h 0m 25s+446ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Create a New user account</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='150' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='151' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='152' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='153' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='154' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I fill up the valid user data form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='155' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='156' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will create the user</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='157' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CreateNewTask</span>
+	</div>
+	<span class='duration right label'>0h 0m 12s+382ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Create New Task by Button</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='158' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='159' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='160' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Select the project "testNewProject1"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='161' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When click on 'Criar Tarefa' button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='162' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Fill up all form with valid data</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:183)
+	at pages.ManagePage.fillCategoryProject(ManagePage.java:251)
+	at steps.ProjectSteps.fill_up_all_form_with_valid_data(ProjectSteps.java:181)
+	at ?.And Fill up all form with valid data(src/test/java/features/Projects.feature:40)
+</pre></div>
+			
+		</li>
+		<li test-id='163' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on 'Criar Nova Tarefa' button</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='164' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will have a task created</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Create_New_Task_by_Button.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='165' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CreateNewTaskBySideBar</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+138ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Create New Task by SideBar</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='166' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='167' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='168' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When click on 'Criar Tarefa' on SideBar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='169' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Fill up all form with valid data</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:183)
+	at pages.ManagePage.fillCategoryProject(ManagePage.java:251)
+	at steps.ProjectSteps.fill_up_all_form_with_valid_data(ProjectSteps.java:181)
+	at ?.And Fill up all form with valid data(src/test/java/features/Projects.feature:49)
+</pre></div>
+			
+		</li>
+		<li test-id='170' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on 'Criar Nova Tarefa' button</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='171' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will have a task created</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Create_New_Task_by_SideBar.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='172' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@EditTask</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+168ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Edit Task</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='173' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='174' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='175' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on 'Ver Tarefa' on SideBar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='176' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Already have a task</span>
+				<div class='pre'><pre>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at pages.ManagePage.validadeExistTask(ManagePage.java:460)
+	at steps.ProjectSteps.already_have_a_task(ProjectSteps.java:214)
+	at ?.And Already have a task(src/test/java/features/Projects.feature:58)
+</pre></div>
+			
+		</li>
+		<li test-id='177' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on the pencil icon</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='178' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And update the Task</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='179' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Save the new information</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='180' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will have a task updated</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Edit_Task.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='181' status='pass'>
+	<span class='duration right label'>0h 1m 42s+451ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Using Different e-mails</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='182' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@ValidateEmailsOfUser</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Using Different e-mails</span>
+			
+				<ul class='steps'>
+					<li test-id='183' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I'm already logged in</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='184' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='185' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='186' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='187' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill up the userName test1 on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='188' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the realName correct on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='189' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the email raynan@base2.com.br on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='190' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='191' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Will validate the user</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='192' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@ValidateEmailsOfUser</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Using Different e-mails</span>
+			
+				<ul class='steps'>
+					<li test-id='193' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I'm already logged in</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='194' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='195' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='196' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='197' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill up the userName test2 on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='198' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the realName invalid on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='199' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the email raynan.mirandabase2.com.br on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='200' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='201' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Will validate the user</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='202' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@ValidateEmailsOfUser</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Using Different e-mails</span>
+			
+				<ul class='steps'>
+					<li test-id='203' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I'm already logged in</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='204' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='205' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='206' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='207' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill up the userName test3 on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='208' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the realName invalid on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='209' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the email raynan.miranda@ on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='210' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='211' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Will validate the user</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='212' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@ValidateEmailsOfUser</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Using Different e-mails</span>
+			
+				<ul class='steps'>
+					<li test-id='213' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I'm already logged in</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='214' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='215' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='216' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='217' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill up the userName test4 on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='218' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the realName invalid on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='219' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the email raynan.miranda@base2.com, on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='220' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='221' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Will validate the user</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='222' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@ValidateEmailsOfUser</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Using Different e-mails</span>
+			
+				<ul class='steps'>
+					<li test-id='223' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I'm already logged in</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='224' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on the 'Convidar Usuarios' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='225' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And click on the 'Gerenciar usuarios' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='226' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Nova Conta' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='227' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill up the userName test5 on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='228' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the realName SameEmail on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='229' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I fill up the email raynan@base2.com.br on the form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='230' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And Click on the 'Criar Usuario' button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='231' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then Will validate the user</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='232' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@AddCategoryOfProject</span>
+	</div>
+	<span class='duration right label'>0h 0m 12s+617ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Add new category on Project</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='233' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='234' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='235' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I insert the category "newcategory" on field</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='236' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on 'Adicionar Categoria'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='237' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I will be able to see the "newcategory" added</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='238' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@EditCategoryOfProject</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+644ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Edit a category on Project</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='239' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='240' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='241' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a category "newcategory2" already</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='newcategory2']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58997}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: a3340d6b50e77afa5018c0dd42be59fe
+*** Element info: {Using=xpath, value=//*[text()='newcategory2']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:179)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementByXPath(RemoteWebElement.java:252)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:175)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+	at pages.ManagePage.validNewCategory(ManagePage.java:512)
+	at steps.ProjectSteps.have_a_category_already(ProjectSteps.java:289)
+	at ?.And have a category "newcategory2" already(src/test/java/features/Projects.feature:98)
+</pre></div>
+			
+		</li>
+		<li test-id='242' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on edit the category 'newcategory2'</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='243' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And update the category</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='244' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I will be able to save the update</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Edit_a_category_on_Project.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='245' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@DeleteCategoryOfProject</span>
+	</div>
+	<span class='duration right label'>0h 0m 11s+583ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Delete a category on Project</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='246' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='247' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='248' class='node and fail' status='fail'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a category "newcategory3Updated" updated already</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='categories']//*[text()='newcategory3Updated']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59036}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 3c116848fef4aa9fe569374e44de0449
+*** Element info: {Using=xpath, value=//*[@id='categories']//*[text()='newcategory3Updated']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.getText(Unknown Source)
+	at steps.ProjectSteps.have_a_category_updated_already(ProjectSteps.java:317)
+	at ?.And have a category "newcategory3Updated" updated already(src/test/java/features/Projects.feature:107)
+</pre></div>
+			
+		</li>
+		<li test-id='249' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Click on 'Apagar' category</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='250' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Confirm delete category of project</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='251' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Category will be deleted</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Delete_a_category_on_Project.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='252' status='fail'>
+	<div class='category-list'>
+		<span class='category label white-text'>@DeleteAllTask</span>
+	</div>
+	<span class='duration right label'>0h 0m 12s+194ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Delete all Tasks</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='253' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='254' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And have a project already</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='255' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on 'Ver Tarefa' on SideBar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='256' class='node when fail' status='fail'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When click on select All tasks</span>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='bug_action']//*[@class='lbl padding-6']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59074}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 65a320940739cd2153a36efc7bdb37bb
+*** Element info: {Using=xpath, value=//*[@id='bug_action']//*[@class='lbl padding-6']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pages.ManagePage.clickCheckSelectAllTasks(ManagePage.java:528)
+	at steps.ProjectSteps.click_on_select_all_tasks(ProjectSteps.java:245)
+	at ?.When click on select All tasks(src/test/java/features/Projects.feature:118)
+</pre></div>
+			
+		</li>
+		<li test-id='257' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And select 'Apagar' on dropDown</span>
+				<div class='pre'>skipped</div>
+			
+		</li>
+		<li test-id='258' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will delete all tasks</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="D:\JavaProjects\base2Project.\cucumber-Report\screenshots\Erro_Scenario_Delete_all_Tasks.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>skipped</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='259'>
+					<div class='test-heading'>
+						<span class='test-name'>To Manage</span>
+						<span class='test-time'>Mar 24, 2019 04:23:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='260' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@AcessManageMarkers</span>
+	</div>
+	<span class='duration right label'>0h 0m 10s+292ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Access the 'Gerenciar Marcadores' tab</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='261' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='262' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on the 'Gerenciar' sidebar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='263' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Gerenciar Marcadores' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='264' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will be able to manage and create bookMarks</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='265' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@CreateNewMarker</span>
+	</div>
+	<span class='duration right label'>0h 0m 15s+379ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Create a New Marker</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='266' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='267' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on the 'Gerenciar' sidebar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='268' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Gerenciar Marcadores' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='269' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I Fill up the name "testMarker"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='270' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Fill up the description "testMakerDescription"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='271' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on 'Criar Marcador'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='272' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then will be created the new Marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='273' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@UpdateMarker</span>
+	</div>
+	<span class='duration right label'>0h 0m 14s+287ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Update the existing Marker</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='274' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='275' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on the 'Gerenciar' sidebar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='276' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Gerenciar Marcadores' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='277' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I Fill up the name "testMarker2"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='278' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on marker created "testMarker2"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='279' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on update Marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='280' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Change the marker information</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='281' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on update marker button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='282' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will be updated the Marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='283' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@DeleteMarker</span>
+	</div>
+	<span class='duration right label'>0h 0m 12s+65ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Delete the existing Marker</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='284' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I'm already logged in</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='285' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on the 'Gerenciar' sidebar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='286' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Click on the 'Gerenciar Marcadores' tab</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='287' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on marker created "testMarker3"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='288' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on delete marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='289' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on confirm delete Marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='290' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Will be deleted the Marker</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@ChangePassword</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:15:51 PM</td>
+										<td class='linked' test-id='14'>forgetPassword.Change the password</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@ValidLogin</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:16:18 PM</td>
+										<td class='linked' test-id='33'>Login.Sucess Login</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@InvalidLogin</span>
+						<span class='category-status right'>
+							<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:16:30 PM</td>
+										<td class='linked' test-id='39'>Login.failed Login - invalid user</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 24, 2019 04:16:43 PM</td>
+										<td class='linked' test-id='46'>Login.failed Login - invalid password</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@PreferencesTag</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:17:43 PM</td>
+										<td class='linked' test-id='85'>My Account.Access the Preferences Tag</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@ColunsTag</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:17:55 PM</td>
+										<td class='linked' test-id='91'>My Account.Access the Manage coluns Tag</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@PerfilsTag</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:18:08 PM</td>
+										<td class='linked' test-id='97'>My Account.Access the Perfils Tag</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TokenAPITag</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:18:22 PM</td>
+										<td class='linked' test-id='103'>My Account.Access the TokenAPI Tag</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@test</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:18:35 PM</td>
+										<td class='linked' test-id='110'>principalMantisPage.Access myAccount</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@EntryOfManageProject</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:19:42 PM</td>
+										<td class='linked' test-id='136'>Projects.Verify the possibility to go to 'Gerenciar Projetos' tab</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CreateNewProject</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:19:53 PM</td>
+										<td class='linked' test-id='141'>Projects.Create a New Project</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CreateNewUserOnManageUsers</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:20:10 PM</td>
+										<td class='linked' test-id='149'>Projects.Create a New user account</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CreateNewTask</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:20:37 PM</td>
+										<td class='linked' test-id='157'>Projects.Create New Task by Button</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CreateNewTaskBySideBar</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:20:52 PM</td>
+										<td class='linked' test-id='165'>Projects.Create New Task by SideBar</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@EditTask</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:21:05 PM</td>
+										<td class='linked' test-id='172'>Projects.Edit Task</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@ValidateEmailsOfUser</span>
+						<span class='category-status right'>
+							<span class='label pass'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 5</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:21:18 PM</td>
+										<td class='linked' test-id='182'>Projects.Using Different e-mails.Using Different e-mails</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 24, 2019 04:21:41 PM</td>
+										<td class='linked' test-id='192'>Projects.Using Different e-mails.Using Different e-mails</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 24, 2019 04:22:02 PM</td>
+										<td class='linked' test-id='202'>Projects.Using Different e-mails.Using Different e-mails</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 24, 2019 04:22:21 PM</td>
+										<td class='linked' test-id='212'>Projects.Using Different e-mails.Using Different e-mails</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 24, 2019 04:22:42 PM</td>
+										<td class='linked' test-id='222'>Projects.Using Different e-mails.Using Different e-mails</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@AddCategoryOfProject</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:23:03 PM</td>
+										<td class='linked' test-id='232'>Projects.Add new category on Project</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@EditCategoryOfProject</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:23:17 PM</td>
+										<td class='linked' test-id='238'>Projects.Edit a category on Project</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@DeleteCategoryOfProject</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:23:31 PM</td>
+										<td class='linked' test-id='245'>Projects.Delete a category on Project</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@DeleteAllTask</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:23:45 PM</td>
+										<td class='linked' test-id='252'>Projects.Delete all Tasks</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@AcessManageMarkers</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:23:59 PM</td>
+										<td class='linked' test-id='260'>To Manage.Access the 'Gerenciar Marcadores' tab</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@CreateNewMarker</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:24:12 PM</td>
+										<td class='linked' test-id='265'>To Manage.Create a New Marker</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@UpdateMarker</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:24:29 PM</td>
+										<td class='linked' test-id='273'>To Manage.Update the existing Marker</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@DeleteMarker</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 24, 2019 04:24:45 PM</td>
+										<td class='linked' test-id='283'>To Manage.Delete the existing Marker</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>6</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:16:03 PM</td>
+                                                        <td class='linked' test-id='22'>forgetPassword.Change the password.Then will return to loginPage</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='main-container']//*[@href='login_page.php']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57797}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 9286da2d2b2bb3f25473913242d47ad9
+*** Element info: {Using=xpath, value=//*[@id='main-container']//*[@href='login_page.php']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pages.LoginPage.clickBtnBackLoginPage(LoginPage.java:89)
+	at steps.ForgetPassword.will_return_to_loginPage(ForgetPassword.java:76)
+	at ?.Then will return to loginPage(src/test/java/features/ForgetPassword.feature:23)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:20:49 PM</td>
+                                                        <td class='linked' test-id='162'>Projects.Create New Task by Button.And Fill up all form with valid data</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:183)
+	at pages.ManagePage.fillCategoryProject(ManagePage.java:251)
+	at steps.ProjectSteps.fill_up_all_form_with_valid_data(ProjectSteps.java:181)
+	at ?.And Fill up all form with valid data(src/test/java/features/Projects.feature:40)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:21:03 PM</td>
+                                                        <td class='linked' test-id='169'>Projects.Create New Task by SideBar.And Fill up all form with valid data</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:183)
+	at pages.ManagePage.fillCategoryProject(ManagePage.java:251)
+	at steps.ProjectSteps.fill_up_all_form_with_valid_data(ProjectSteps.java:181)
+	at ?.And Fill up all form with valid data(src/test/java/features/Projects.feature:49)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:23:28 PM</td>
+                                                        <td class='linked' test-id='241'>Projects.Edit a category on Project.And have a category "newcategory2" already</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='newcategory2']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58997}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: a3340d6b50e77afa5018c0dd42be59fe
+*** Element info: {Using=xpath, value=//*[text()='newcategory2']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:179)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementByXPath(RemoteWebElement.java:252)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:175)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy21.findElement(Unknown Source)
+	at pages.ManagePage.validNewCategory(ManagePage.java:512)
+	at steps.ProjectSteps.have_a_category_already(ProjectSteps.java:289)
+	at ?.And have a category "newcategory2" already(src/test/java/features/Projects.feature:98)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:23:43 PM</td>
+                                                        <td class='linked' test-id='248'>Projects.Delete a category on Project.And have a category "newcategory3Updated" updated already</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='categories']//*[text()='newcategory3Updated']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59036}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 3c116848fef4aa9fe569374e44de0449
+*** Element info: {Using=xpath, value=//*[@id='categories']//*[text()='newcategory3Updated']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.getText(Unknown Source)
+	at steps.ProjectSteps.have_a_category_updated_already(ProjectSteps.java:317)
+	at ?.And have a category "newcategory3Updated" updated already(src/test/java/features/Projects.feature:107)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:23:57 PM</td>
+                                                        <td class='linked' test-id='256'>Projects.Delete all Tasks.When click on select All tasks</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='bug_action']//*[@class='lbl padding-6']"}
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-5SGPPV4', ip: '192.168.0.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Raynan\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59074}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 65a320940739cd2153a36efc7bdb37bb
+*** Element info: {Using=xpath, value=//*[@id='bug_action']//*[@class='lbl padding-6']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pages.ManagePage.clickCheckSelectAllTasks(ManagePage.java:528)
+	at steps.ProjectSteps.click_on_select_all_tasks(ProjectSteps.java:245)
+	at ?.When click on select All tasks(src/test/java/features/Projects.feature:118)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.IndexOutOfBoundsException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Mar 24, 2019 04:21:16 PM</td>
+                                                        <td class='linked' test-id='176'>Projects.Edit Task.And Already have a task</td>
+                                                        <td><pre><pre>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at pages.ManagePage.validadeExistTask(ManagePage.java:460)
+	at steps.ProjectSteps.already_have_a_task(ProjectSteps.java:214)
+	at ?.And Already have a task(src/test/java/features/Projects.feature:58)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>7</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>39</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>243</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 24, 2019 04:15:25 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 24, 2019 04:24:59 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 9m 33s+766ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>user</td>
+								<td>Raynan</td>
+							</tr>
+							<tr>
+								<td>os</td>
+								<td>Windows 10</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@ChangePassword</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@ValidLogin</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@InvalidLogin</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@PreferencesTag</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@ColunsTag</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@PerfilsTag</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TokenAPITag</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@test</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@EntryOfManageProject</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@CreateNewProject</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@CreateNewUserOnManageUsers</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@CreateNewTask</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@CreateNewTaskBySideBar</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@EditTask</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@ValidateEmailsOfUser</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@AddCategoryOfProject</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@EditCategoryOfProject</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@DeleteCategoryOfProject</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@DeleteAllTask</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@AcessManageMarkers</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@CreateNewMarker</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@UpdateMarker</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@DeleteMarker</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<div id='testrunner-logs-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>TestRunner Logs</h5>
+		
+		<div class='card-panel'>
+				test runner output message Project
+		</div>
+	</div>
+</div>
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 4,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 1,
+				exceptionsParent: 3,
+				
+				passChild: 31,
+				failChild: 7,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 1,
+				infoChild: 0,
+				exceptionsChild: 8,
+				
+				passGrandChild: 217,
+				failGrandChild: 7,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 19,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 26,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+ 		</script>
+	</body>
+	
+</html>

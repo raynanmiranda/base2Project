@@ -39,7 +39,7 @@ public class ManagePage extends PageBase {
 	@FindBy(how = How.ID, using = "project-description")
 	public WebElement txtDescriptionField; // Description(Project)
 
-	@FindBy(how = How.LINK_TEXT, using = "testNewProject1") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
+	@FindBy(how = How.LINK_TEXT, using = "testNewProject") // "//*[@id='main-container']//*[2][@class='table-responsive']//a[text()='testNewProject']")
 	public WebElement validateProjectCreated; // Description(Project)
 
 	@FindBy(how = How.ID, using = "user-username")
@@ -206,9 +206,14 @@ public class ManagePage extends PageBase {
 				+ "']/parent::tr/td[contains(@class,'edit')]/a"));
 	}
 	
+	private WebElement elementValidatePriorityOnTaskEdited(String priorityName) {
+		
+		return driver.findElement(By.xpath("//td[contains(@class,'bug-priority') and text()='"+priorityName+"']"));
+	}
+	
 	private WebElement elementValidateSeverityOnTaskEdited(String severityName) {
 		
-		return driver.findElement(By.xpath("//td[contains(@class,'severity') and text()='"+severityName+"']"));
+		return driver.findElement(By.xpath("//td[contains(@class,'bug-severity') and text()='"+severityName+"']"));
 	}
 	
 	public WebElement elementValidateStepsOnTaskEdited(){
@@ -426,9 +431,9 @@ public void getPriorityStatus(String priorityStatusName) {
 		
 		boolean  validation;
 		String severityName = elementValidateSeverityOnTaskEdited(severityStatus).getText();
-		String priorityName = elementValidateSeverityOnTaskEdited(priorityStatus).getText();
+		String priorityName = elementValidatePriorityOnTaskEdited(priorityStatus).getText();
 		
-		if(severityStatus.equalsIgnoreCase(severityName) && severityStatus.equalsIgnoreCase(priorityName)) {
+		if(severityStatus.equalsIgnoreCase(severityName) && priorityStatus.equalsIgnoreCase(priorityName)) {
 		
 			validation = true;
 		}

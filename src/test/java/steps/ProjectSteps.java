@@ -1,9 +1,6 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.sql.SQLException;
@@ -12,7 +9,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import junit.framework.Assert;
+
 import pages.ManagePage;
 import pages.PrincipalPage;
 import utils.ConnectMySQL;
@@ -30,7 +27,7 @@ public class ProjectSteps extends ManagePage {
 	}
     
 	private String checkNewName = "testNewProject";
-	private String checkName = " testNewProject1 ";
+	//private String checkName = "testNewProject1";
 	protected String textTask = "Test new task";
 	public String checkUser;
 
@@ -80,7 +77,7 @@ public class ProjectSteps extends ManagePage {
 
 		Thread.sleep(3000);
 		managePage.validateProjectCreated();
-		assertEquals(checkName, managePage.nameProject);
+		assertTrue("Project Not Found!",checkNewName.contains(managePage.nameProject));
 	}
 
 	@Given("^click on the 'Gerenciar usuarios' tab$")
@@ -160,7 +157,7 @@ public class ProjectSteps extends ManagePage {
 	public void have_a_project_already() throws Throwable {
 		managePage.clickManageTag();
 		managePage.manageProjectTag();
-		assertEquals(checkName, managePage.validateProjectCreated.getText());
+		assertEquals(checkNewName, managePage.validateProjectCreated.getText());
 	}
 
 	@When("^click on 'Criar Tarefa' on SideBar$")
@@ -301,7 +298,7 @@ public class ProjectSteps extends ManagePage {
 	
 	@And("^update the category$")
 	public void update_the_category() {
-		managePage.fillUpdateCategoryName("newcategory2Updated");
+		managePage.fillUpdateCategoryName("newcategory3Updated");
 		managePage.clickBtnUpdateCategory();
 	}
 	

@@ -14,7 +14,7 @@ Scenario: Verify the possibility to go to 'Gerenciar Projetos' tab
 @CreateNewProject 
 Scenario: Create a New Project 
 
-	And I click on the 'Convidar Usuarios' button 
+    And I click on the 'Convidar Usuarios' button
 	And click on the 'Gerenciar projetos' tab 
 	And Click on the 'Criar Novo Projeto' button 
 	When I fill up the valid data form 
@@ -31,7 +31,7 @@ Scenario: Create a New user account
 	And Click on the 'Criar Usuario' button 
 	Then Will create the user 
 	
-@CreateNewTask 
+@CreateNewTask
 Scenario: Create New Task by Button 
 
 	And  have a project already 
@@ -41,7 +41,7 @@ Scenario: Create New Task by Button
 	And  Click on 'Criar Nova Tarefa' button 
 	Then Will have a task created 
 	
-@CreateNewTask-SideBarWay 
+@CreateNewTaskBySideBar
 Scenario: Create New Task by SideBar 
 
 	And  have a project already 

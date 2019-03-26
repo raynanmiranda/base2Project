@@ -34,7 +34,7 @@ public class PrincipalPage extends PageBase {
 	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/mantis/view_all_bug_page.php']")
 	public WebElement menuSeeTask;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id=\"bug_action\"]//*[@class='widget-title lighter']")
+	@FindBy(how = How.XPATH, using = "//*[@id='bug_action']//*[@class='widget-title lighter']")
 	public WebElement validateSeeTask;
 	
 	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/mantis/summary_page.php']")
@@ -46,7 +46,7 @@ public class PrincipalPage extends PageBase {
 	@FindBy (how = How.XPATH, using="//*[@class='nav nav-list']//*[@href='/mantis/manage_overview_page.php']")
 	public WebElement menuGerenciar;
 	
-	@FindBy (how = How.XPATH, using="//*[@class='page-content']//*[@href='/mantis/manage_overview_page.php']")
+	@FindBy (how = How.XPATH, using="//*[@id='main-container']//*[@class='widget-title lighter']")
 	public WebElement validateMenuGerenciar;
 	
 	@FindBy (how = How.XPATH, using="//*[@class='btn btn-primary btn-sm']")
@@ -138,7 +138,8 @@ public class PrincipalPage extends PageBase {
 	}	
 	public void menuGerenciar() {
 		menuGerenciar.click();
-	}
+		
+	} 
 	
 	public void menuRegisterChange() {
 		menuRegisterChange.click();
